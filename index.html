@@ -4,221 +4,784 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Budget Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #4f46e5;
+      --primary-hover: #4338ca;
+      --secondary-color: #10b981;
+      --secondary-hover: #059669;
+      --text-color: #1f2937;
+      --light-text: #6b7280;
+      --background: #f9fafb;
+      --card-bg: #ffffff;
+      --border-color: #e5e7eb;
+      --error-color: #ef4444;
+      --warning-color: #f59e0b;
+      --success-color: #10b981;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9fafb;
-      padding: 15px;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background);
+      color: var(--text-color);
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+    
+    .logo h1 {
+      font-size: 1.5rem;
       margin: 0;
     }
-    h1 {
-      text-align: center;
-      font-size: 1.8rem;
+    
+    .user-menu {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: white;
+    }
+    
+    .logout-btn {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+    
+    .logout-btn:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+    
+    .form-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
       margin-bottom: 20px;
     }
-    .form-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
+    
     .form-group {
       display: flex;
       flex-direction: column;
-      flex: 1 1 200px;
     }
+    
     label {
-      margin-bottom: 5px;
+      margin-bottom: 8px;
       font-weight: 500;
+      color: var(--text-color);
+      font-size: 14px;
     }
+    
     input, select {
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 16px;
+      padding: 12px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+    
     .button-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin: 15px 0;
+      gap: 10px;
+      margin-top: 20px;
     }
+    
     button {
-      padding: 10px 15px;
+      padding: 12px 20px;
       border: none;
-      background-color: #2563eb;
-      color: white;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+    
+    .btn-secondary {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--secondary-hover);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--background);
+    }
+    
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    
+    .search-box {
       flex: 1;
-      min-width: 120px;
-      transition: background-color 0.2s;
+      min-width: 200px;
+      position: relative;
     }
-    button:hover {
-      background-color: #1d4ed8;
+    
+    .search-box input {
+      width: 100%;
+      padding-left: 40px;
     }
+    
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--light-text);
+    }
+    
+    .filter-dropdown {
+      min-width: 150px;
+    }
+    
     table {
       width: 100%;
-      margin-top: 20px;
       border-collapse: collapse;
-      background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      font-size: 15px;
     }
-    th, td {
-      border: 1px solid #e5e7eb;
-      padding: 12px 8px;
-      text-align: center;
-    }
+    
     th {
-      background-color: #e5e7eb;
+      text-align: left;
+      padding: 15px;
+      background-color: #f3f4f6;
+      font-weight: 600;
+      color: var(--text-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    td {
+      padding: 15px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-color);
+    }
+    
+    tr:hover {
+      background-color: #f9fafb;
+    }
+    
+    .amount {
+      font-family: 'Courier New', monospace;
       font-weight: 600;
     }
-    .summary {
-      margin-top: 20px;
-      padding: 15px;
-      font-weight: bold;
-      background-color: #d1fae5;
-      border: 1px solid #10b981;
-      border-radius: 4px;
-      text-align: center;
-      font-size: 18px;
+    
+    .debit {
+      color: var(--error-color);
     }
+    
+    .credit {
+      color: var(--success-color);
+    }
+    
     .action-btn {
       padding: 6px 10px;
-      margin: 2px;
-      font-size: 14px;
-      border-radius: 4px;
+      margin-right: 5px;
+      font-size: 13px;
+      border-radius: 6px;
     }
+    
     .edit-btn {
-      background-color: #facc15;
-      color: black;
+      background-color: var(--warning-color);
+      color: white;
     }
+    
+    .edit-btn:hover {
+      background-color: #d97706;
+    }
+    
     .delete-btn {
-      background-color: #ef4444;
+      background-color: var(--error-color);
+      color: white;
     }
-    a {
-      cursor: pointer;
-      color: #2563eb;
-      text-decoration: underline;
+    
+    .delete-btn:hover {
+      background-color: #dc2626;
     }
-    #saveMessage {
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 4px;
-      text-align: center;
+    
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    
+    .summary-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .summary-title {
+      font-size: 14px;
+      color: var(--light-text);
+      margin-bottom: 10px;
+    }
+    
+    .summary-value {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .summary-icon {
+      align-self: flex-end;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -50px;
+    }
+    
+    .balance-icon {
+      background-color: #e0e7ff;
+      color: #4f46e5;
+    }
+    
+    .income-icon {
+      background-color: #d1fae5;
+      color: #10b981;
+    }
+    
+    .expense-icon {
+      background-color: #fee2e2;
+      color: #ef4444;
+    }
+    
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      color: white;
       font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    
+    .notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .notification.success {
+      background-color: var(--success-color);
+    }
+    
+    .notification.error {
+      background-color: var(--error-color);
+    }
+    
+    .notification.warning {
+      background-color: var(--warning-color);
+    }
+    
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(20px);
+      transition: transform 0.3s;
+    }
+    
+    .modal-overlay.active .modal {
+      transform: translateY(0);
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--light-text);
+      padding: 5px;
+    }
+    
+    .modal-body {
+      margin-bottom: 20px;
+    }
+    
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
     }
     
     /* Responsive styles */
     @media (max-width: 768px) {
-      body {
-        padding: 10px;
+      .form-container {
+        grid-template-columns: 1fr;
       }
-      h1 {
-        font-size: 1.5rem;
+      
+      .summary-cards {
+        grid-template-columns: 1fr;
       }
+      
+      .header-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .user-menu {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
       table {
         font-size: 14px;
       }
+      
       th, td {
-        padding: 8px 4px;
+        padding: 10px;
       }
+      
       .action-btn {
-        padding: 4px 8px;
+        padding: 5px 8px;
         font-size: 12px;
       }
     }
     
-    /* For very small screens */
     @media (max-width: 480px) {
+      .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .search-box {
+        width: 100%;
+      }
+      
+      .filter-dropdown {
+        width: 100%;
+      }
+      
       table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
       }
-      .form-group {
-        flex: 1 1 100%;
+      
+      .button-group {
+        flex-direction: column;
       }
+      
       button {
-        flex: 1 1 auto;
+        width: 100%;
       }
+    }
+    
+    /* Category badge styles */
+    .category-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      background-color: #e0e7ff;
+      color: #4f46e5;
+      cursor: pointer;
+    }
+    
+    /* Date picker custom styles */
+    input[type="date"] {
+      appearance: none;
+      -webkit-appearance: none;
+      padding-right: 15px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.273 5.625A4.483 4.483 0 015.25 4.5h13.5c1.141 0 2.183.425 2.977 1.125A3 3 0 0018.75 3H5.25a3 3 0 00-2.977 2.625zM2.273 8.625A4.483 4.483 0 015.25 7.5h13.5c1.141 0 2.183.425 2.977 1.125A3 3 0 0018.75 6H5.25a3 3 0 00-2.977 2.625zM5.25 9a3 3 0 00-3 3v6a3 3 0 003 3h13.5a3 3 0 003-3v-6a3 3 0 00-3-3H15a.75.75 0 00-.75.75 2.25 2.25 0 01-4.5 0A.75.75 0 009 9H5.25z" />
+        </svg>
+        <h1>Budget Register</h1>
+      </div>
+      <div class="user-menu">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">U</div>
+          <span id="username">User</span>
+        </div>
+        <button class="logout-btn" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <h1>My Accounts</h1>
-
-  <div class="form-container">
-    <div class="form-group">
-      <label for="date">Date:</label>
-      <input type="date" id="date" />
+  <div class="container">
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="summary-title">Total Balance</div>
+        <div class="summary-value" id="totalBalance">₹0.00</div>
+        <div class="summary-icon balance-icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+      </div>
+      
+      <div class="summary-card">
+        <div class="summary-title">Total Income</div>
+        <div class="summary-value" id="totalIncome">₹0.00</div>
+        <div class="summary-icon income-icon">
+          <i class="fas fa-arrow-down"></i>
+        </div>
+      </div>
+      
+      <div class="summary-card">
+        <div class="summary-title">Total Expenses</div>
+        <div class="summary-value" id="totalExpenses">₹0.00</div>
+        <div class="summary-icon expense-icon">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+      </div>
     </div>
     
-    <div class="form-group">
-      <label for="category">Category:</label>
-      <select id="category" onchange="handleCategoryChange(this)">
-        <option value="" disabled selected>Select</option>
-        <option value="Agriculture">Agriculture</option>
-        <option value="ESSAR">ESSAR</option>
-        <option value="Miscellaneous">Miscellaneous</option>
-        <option value="Sodalaikasi">Sodalaikasi</option>
-        <option value="SR">SR</option>
-        <option value="SR Private">SR Private</option>
-        <option value="Sodalaikasi Private">Sodalaikasi Private</option>
-        <option value="FDRL 5333">FDRL 5333</option>
-        <option value="FDRL 541">FDRL 541</option>
-        <option value="KVB Kala">KVB Kala</option>
-        <option value="KVB SR">KVB SR</option>
-        <option value="TMB SR">TMB SR</option>
-        <option value="TMB Kala">TMB Kala</option>
-        <option value="KVB SRS">KVB SRS</option>
-        <option value="Others">Others</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="subject">Subject:</label>
-      <input type="text" id="subject" placeholder="Enter subject or description" />
+    <!-- Add Entry Card -->
+    <div class="card">
+      <h2>Add New Entry</h2>
+      <div class="form-container">
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" />
+        </div>
+        
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" onchange="handleCategoryChange(this)">
+            <option value="" disabled selected>Select</option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="ESSAR">ESSAR</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Sodalaikasi">Sodalaikasi</option>
+            <option value="SR">SR</option>
+            <option value="SR Private">SR Private</option>
+            <option value="Sodalaikasi Private">Sodalaikasi Private</option>
+            <option value="FDRL 5333">FDRL 5333</option>
+            <option value="FDRL 541">FDRL 541</option>
+            <option value="KVB Kala">KVB Kala</option>
+            <option value="KVB SR">KVB SR</option>
+            <option value="TMB SR">TMB SR</option>
+            <option value="TMB Kala">TMB Kala</option>
+            <option value="KVB SRS">KVB SRS</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Enter subject or description" />
+        </div>
+        
+        <div class="form-group">
+          <label for="debit">Debit (Expense)</label>
+          <input type="number" id="debit" value="0" min="0" />
+        </div>
+        
+        <div class="form-group">
+          <label for="credit">Credit (Income)</label>
+          <input type="number" id="credit" value="0" min="0" />
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <button class="btn-primary" onclick="addEntry()">
+          <i class="fas fa-plus"></i> Add Entry
+        </button>
+        <button class="btn-outline" onclick="clearInputs()">
+          <i class="fas fa-times"></i> Clear
+        </button>
+      </div>
     </div>
     
-    <div class="form-group">
-      <label for="debit">Debit:</label>
-      <input type="number" id="debit" value="0" />
-    </div>
-    
-    <div class="form-group">
-      <label for="credit">Credit:</label>
-      <input type="number" id="credit" value="0" />
+    <!-- Transactions Card -->
+    <div class="card">
+      <h2>Transactions</h2>
+      
+      <div class="filter-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search transactions..." onkeyup="filterEntries()">
+        </div>
+        
+        <select id="categoryFilter" class="filter-dropdown" onchange="filterEntries()">
+          <option value="">All Categories</option>
+          <option value="Agriculture">Agriculture</option>
+          <option value="ESSAR">ESSAR</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+          <option value="Sodalaikasi">Sodalaikasi</option>
+          <option value="SR">SR</option>
+          <option value="SR Private">SR Private</option>
+          <option value="Sodalaikasi Private">Sodalaikasi Private</option>
+          <option value="FDRL 5333">FDRL 5333</option>
+          <option value="FDRL 541">FDRL 541</option>
+          <option value="KVB Kala">KVB Kala</option>
+          <option value="KVB SR">KVB SR</option>
+          <option value="TMB SR">TMB SR</option>
+          <option value="TMB Kala">TMB Kala</option>
+          <option value="KVB SRS">KVB SRS</option>
+        </select>
+        
+        <select id="dateFilter" class="filter-dropdown" onchange="filterEntries()">
+          <option value="">All Time</option>
+          <option value="today">Today</option>
+          <option value="week">This Week</option>
+          <option value="month">This Month</option>
+          <option value="year">This Year</option>
+        </select>
+        
+        <button class="btn-outline" onclick="showAll()">
+          <i class="fas fa-sync-alt"></i> Reset Filters
+        </button>
+      </div>
+      
+      <div class="button-group">
+        <button class="btn-secondary" onclick="loadFromGitHub()">
+          <i class="fas fa-cloud-download-alt"></i> Refresh Data
+        </button>
+        <button class="btn-outline" onclick="promptForToken()">
+          <i class="fas fa-key"></i> Set GitHub Token
+        </button>
+      </div>
+      
+      <table id="ledger">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Subject</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Balance</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
   </div>
   
-  <div class="button-group">
-    <button onclick="addEntry()">Add</button>
-    <button onclick="showAll()">Show All</button>
-    <button onclick="loadFromGitHub()">Refresh Data</button>
+  <!-- Edit Modal -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Entry</h3>
+        <button class="modal-close" onclick="closeEditModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="editDate">Date</label>
+          <input type="date" id="editDate" />
+        </div>
+        
+        <div class="form-group">
+          <label for="editCategory">Category</label>
+          <select id="editCategory" onchange="handleCategoryChange(this)">
+            <option value="" disabled>Select</option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="ESSAR">ESSAR</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Sodalaikasi">Sodalaikasi</option>
+            <option value="SR">SR</option>
+            <option value="SR Private">SR Private</option>
+            <option value="Sodalaikasi Private">Sodalaikasi Private</option>
+            <option value="FDRL 5333">FDRL 5333</option>
+            <option value="FDRL 541">FDRL 541</option>
+            <option value="KVB Kala">KVB Kala</option>
+            <option value="KVB SR">KVB SR</option>
+            <option value="TMB SR">TMB SR</option>
+            <option value="TMB Kala">TMB Kala</option>
+            <option value="KVB SRS">KVB SRS</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="editSubject">Subject</label>
+          <input type="text" id="editSubject" placeholder="Enter subject or description" />
+        </div>
+        
+        <div class="form-group">
+          <label for="editDebit">Debit (Expense)</label>
+          <input type="number" id="editDebit" min="0" />
+        </div>
+        
+        <div class="form-group">
+          <label for="editCredit">Credit (Income)</label>
+          <input type="number" id="editCredit" min="0" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-outline" onclick="closeEditModal()">Cancel</button>
+        <button class="btn-primary" onclick="saveEdit()">Save Changes</button>
+      </div>
+    </div>
   </div>
-
-  <table id="ledger">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Category</th>
-        <th>Subject</th>
-        <th>Debit</th>
-        <th>Credit</th>
-        <th>Total</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
-  <div class="summary" id="balanceSummary">Total Balance: ₹0</div>
-  <div id="saveMessage" style="display:none; background-color: #fef3c7; color: #92400e; padding: 10px; margin-top: 10px; border-radius: 4px; text-align: center;">
-    Data saved successfully.
-  </div>
+  
+  <!-- Notification -->
+  <div class="notification" id="notification"></div>
 
   <script>
     // GitHub configuration
@@ -226,39 +789,36 @@
     const GITHUB_REPO = "expense-tracker";
     const DATA_FILE_PATH = "data/budget_data.json";
     
-    // We'll store the token in localStorage instead of hardcoding it
     let entries = [];
+    let currentEditIndex = -1;
     
-    // Add a button to set GitHub token
-    const tokenButton = document.createElement('button');
-    tokenButton.innerText = 'Set GitHub Token';
-    tokenButton.onclick = promptForToken;
-    tokenButton.style.backgroundColor = '#10b981';
-    document.querySelector('.button-group').appendChild(tokenButton);
-
-    // Load data when page loads
+    // Check if user is logged in
     document.addEventListener('DOMContentLoaded', function() {
-      // Always try to load from GitHub first
+      const currentUser = localStorage.getItem('currentUser');
+      if (!currentUser) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Set user info
+      document.getElementById('username').textContent = currentUser;
+      document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
+      
+      // Load data
       loadFromGitHub().then(() => {
-        // If GitHub load fails, fall back to localStorage
         if (entries.length === 0) {
           loadFromLocalStorage();
         }
       });
+      
+      // Update category filter options
+      updateCategoryFilterOptions();
     });
-
-    // Save data to localStorage as a backup
-    function saveToLocalStorage() {
-      localStorage.setItem('budgetEntries', JSON.stringify(entries));
-    }
-
-    // Load data from localStorage
-    function loadFromLocalStorage() {
-      const savedEntries = localStorage.getItem('budgetEntries');
-      if (savedEntries) {
-        entries = JSON.parse(savedEntries);
-        renderTable(entries);
-      }
+    
+    // Logout function
+    function logout() {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'login.html';
     }
     
     // Function to prompt user for GitHub token
@@ -266,7 +826,7 @@
       const token = prompt("Enter your GitHub Personal Access Token (needs repo scope):");
       if (token) {
         localStorage.setItem('github_token', token);
-        alert("Token saved! Try adding or refreshing data now.");
+        showNotification("Token saved! Try refreshing data now.", "success");
       }
     }
     
@@ -274,17 +834,24 @@
     async function getGitHubToken() {
       const token = localStorage.getItem('github_token');
       if (!token) {
-        // If no token is found, prompt the user
-        const saveMessage = document.getElementById('saveMessage');
-        if (saveMessage) {
-          saveMessage.innerHTML = 'GitHub token is required. Please click "Set GitHub Token" button.';
-          saveMessage.style.display = 'block';
-          setTimeout(() => {
-            saveMessage.style.display = 'none';
-          }, 5000);
-        }
+        showNotification("GitHub token is required. Please click 'Set GitHub Token' button.", "warning");
       }
       return token;
+    }
+    
+    // Save data to localStorage as a backup
+    function saveToLocalStorage() {
+      localStorage.setItem('budgetEntries', JSON.stringify(entries));
+    }
+    
+    // Load data from localStorage
+    function loadFromLocalStorage() {
+      const savedEntries = localStorage.getItem('budgetEntries');
+      if (savedEntries) {
+        entries = JSON.parse(savedEntries);
+        renderTable(entries);
+        updateSummary();
+      }
     }
     
     // Load data from GitHub
@@ -313,14 +880,7 @@
             // If authentication fails, the token might be invalid
             if (response.status === 401) {
               localStorage.removeItem('github_token');
-              const saveMessage = document.getElementById('saveMessage');
-              if (saveMessage) {
-                saveMessage.innerHTML = 'Your GitHub token is invalid or expired. Please click "Set GitHub Token" button.';
-                saveMessage.style.display = 'block';
-                setTimeout(() => {
-                  saveMessage.style.display = 'none';
-                }, 5000);
-              }
+              showNotification("Your GitHub token is invalid or expired. Please click 'Set GitHub Token' button.", "error");
               return false;
             }
             throw new Error(`Failed to load data: ${response.status}`);
@@ -333,13 +893,17 @@
         
         // Update the UI
         renderTable(entries);
+        updateSummary();
+        updateCategoryFilterOptions();
+        
         // Also update localStorage as backup
         saveToLocalStorage();
         
+        showNotification("Data loaded successfully!", "success");
         return true;
       } catch (error) {
         console.error("Error loading data:", error);
-        // Don't show alert to user, just use local data
+        showNotification("Failed to load data from GitHub. Using local data.", "error");
         return false;
       }
     }
@@ -349,15 +913,7 @@
       const token = await getGitHubToken();
       
       if (!token) {
-        // If no token, show a message
-        const saveMessage = document.getElementById('saveMessage');
-        if (saveMessage) {
-          saveMessage.innerHTML = 'GitHub token is required. Please click "Set GitHub Token" button.';
-          saveMessage.style.display = 'block';
-          setTimeout(() => {
-            saveMessage.style.display = 'none';
-          }, 5000);
-        }
+        showNotification("GitHub token is required. Please click 'Set GitHub Token' button.", "warning");
         return false;
       }
       
@@ -377,14 +933,7 @@
           } else if (response.status === 401) {
             // If authentication fails, the token might be invalid
             localStorage.removeItem('github_token');
-            const saveMessage = document.getElementById('saveMessage');
-            if (saveMessage) {
-              saveMessage.innerHTML = 'Your GitHub token is invalid or expired. Please click "Set GitHub Token" button.';
-              saveMessage.style.display = 'block';
-              setTimeout(() => {
-                saveMessage.style.display = 'none';
-              }, 5000);
-            }
+            showNotification("Your GitHub token is invalid or expired. Please click 'Set GitHub Token' button.", "error");
             return false;
           }
         } catch (error) {
@@ -420,14 +969,7 @@
           // If we get a 401 Unauthorized, the token might be invalid
           if (saveResponse.status === 401) {
             localStorage.removeItem('github_token');
-            const saveMessage = document.getElementById('saveMessage');
-            if (saveMessage) {
-              saveMessage.innerHTML = 'Your GitHub token is invalid or expired. Please click "Set GitHub Token" button.';
-              saveMessage.style.display = 'block';
-              setTimeout(() => {
-                saveMessage.style.display = 'none';
-              }, 5000);
-            }
+            showNotification("Your GitHub token is invalid or expired. Please click 'Set GitHub Token' button.", "error");
             return false;
           }
           
@@ -435,29 +977,12 @@
           throw new Error(`GitHub API error: ${saveResponse.status} - ${errorData.message}`);
         }
         
-        // Show success message
-        const saveMessage = document.getElementById('saveMessage');
-        if (saveMessage) {
-          saveMessage.innerHTML = 'Data saved to GitHub successfully!';
-          saveMessage.style.display = 'block';
-          setTimeout(() => {
-            saveMessage.style.display = 'none';
-          }, 3000);
-        }
-        
+        showNotification("Data saved to GitHub successfully!", "success");
         return true;
         
       } catch (error) {
         console.error("Error saving to GitHub:", error);
-        // Don't show alert to avoid disrupting user experience
-        const saveMessage = document.getElementById('saveMessage');
-        if (saveMessage) {
-          saveMessage.innerHTML = 'Error saving to GitHub. Data saved locally.';
-          saveMessage.style.display = 'block';
-          setTimeout(() => {
-            saveMessage.style.display = 'none';
-          }, 3000);
-        }
+        showNotification("Error saving to GitHub. Data saved locally.", "error");
         return false;
       }
     }
@@ -475,31 +1000,16 @@
           return result;
         } catch (error) {
           console.error("Error in saveData:", error);
-          // If GitHub save fails, at least we saved locally
-          const saveMessage = document.getElementById('saveMessage');
-          if (saveMessage) {
-            saveMessage.innerHTML = 'Data saved locally, but GitHub sync failed. Please try again later.';
-            saveMessage.style.display = 'block';
-            setTimeout(() => {
-              saveMessage.style.display = 'none';
-            }, 3000);
-          }
+          showNotification("Data saved locally, but GitHub sync failed.", "warning");
           return false;
         }
       } else {
-        // If no token, just show a message
-        const saveMessage = document.getElementById('saveMessage');
-        if (saveMessage) {
-          saveMessage.innerHTML = 'Data saved locally. To save to GitHub, click "Set GitHub Token" button.';
-          saveMessage.style.display = 'block';
-          setTimeout(() => {
-            saveMessage.style.display = 'none';
-          }, 3000);
-        }
+        showNotification("Data saved locally. To save to GitHub, click 'Set GitHub Token' button.", "warning");
         return true;
       }
     }
-
+    
+    // Handle category change
     function handleCategoryChange(select) {
       if (select.value === "Others") {
         const newCat = prompt("Enter new category name:");
@@ -507,33 +1017,41 @@
           const newOption = new Option(newCat, newCat);
           select.add(newOption, select.options.length - 1);
           select.value = newCat;
+          
+          // Also add to the category filter
+          const categoryFilter = document.getElementById('categoryFilter');
+          const filterOption = new Option(newCat, newCat);
+          categoryFilter.add(filterOption);
         } else {
           select.value = "";
         }
       }
     }
-
+    
+    // Add new entry
     async function addEntry() {
       const date = document.getElementById("date").value;
       const category = document.getElementById("category").value;
       const subject = document.getElementById("subject").value.trim();
       const debit = parseFloat(document.getElementById("debit").value) || 0;
       const credit = parseFloat(document.getElementById("credit").value) || 0;
-
+    
       if (!date || !category) {
-        alert("Please enter date and category.");
+        showNotification("Please enter date and category.", "error");
         return;
       }
       
-      // Optional: subject can be empty, no strict check
-
       entries.push({ date, category, subject, debit, credit });
-      await saveData(); // This saves both locally and to GitHub
+      await saveData();
       renderTable(entries);
+      updateSummary();
+      updateCategoryFilterOptions();
       
+      showNotification("Entry added successfully!", "success");
       clearInputs();
     }
-
+    
+    // Clear input fields
     function clearInputs() {
       document.getElementById("date").value = "";
       document.getElementById("category").value = "";
@@ -541,87 +1059,275 @@
       document.getElementById("debit").value = 0;
       document.getElementById("credit").value = 0;
     }
-
-    function renderTable(data) {
-      const tbody = document.querySelector("#ledger tbody");
-      tbody.innerHTML = "";
-
-      let balance = 0;
-
-      data.forEach((entry, index) => {
-        balance += entry.credit - entry.debit;
-
-        const row = `<tr>
-          <td>${entry.date}</td>
-          <td><a onclick="filterByCategory('${entry.category}')">${entry.category}</a></td>
-          <td>${entry.subject || ""}</td>
-          <td>₹${entry.debit}</td>
-          <td>₹${entry.credit}</td>
-          <td>₹${balance.toFixed(2)}</td>
-          <td>
-            <button class="action-btn edit-btn" onclick="editEntry(${index})">Edit</button>
-            <button class="action-btn delete-btn" onclick="deleteEntry(${index})">Delete</button>
-          </td>
-        </tr>`;
-        tbody.innerHTML += row;
-      });
-
-      document.getElementById("balanceSummary").innerText = `Total Balance: ₹${balance.toFixed(2)}`;
-    }
-
-    function filterByCategory(category) {
-      const filtered = entries.filter(e => e.category === category);
-      renderTable(filtered);
-      
-      // Show a back button when filtering
-      const backButton = document.createElement('button');
-      backButton.innerText = 'Back to All';
-      backButton.onclick = showAll;
-      backButton.style.marginTop = '10px';
-      
-      const summary = document.getElementById("balanceSummary");
-      summary.innerHTML = `Filtered by <strong>${category}</strong> — Total Balance: ₹${filtered.reduce((acc,e) => acc + e.credit - e.debit, 0).toFixed(2)}`;
-      summary.appendChild(document.createElement('br'));
-      summary.appendChild(backButton);
-    }
-
-    function showAll() {
-      renderTable(entries);
-    }
-
+    
+    // Delete entry
     async function deleteEntry(index) {
-      if (confirm("Delete this entry?")) {
+      if (confirm("Are you sure you want to delete this entry?")) {
         entries.splice(index, 1);
-        await saveData(); // This saves both locally and to GitHub
+        await saveData();
         renderTable(entries);
+        updateSummary();
+        showNotification("Entry deleted successfully!", "success");
       }
     }
-
-    async function editEntry(index) {
+    
+    // Open edit modal
+    function openEditModal(index) {
+      currentEditIndex = index;
       const entry = entries[index];
-      const newDate = prompt("Edit Date:", entry.date);
-      if (!newDate) return;
-      const newCategory = prompt("Edit Category:", entry.category);
-      if (!newCategory) return;
-      const newSubject = prompt("Edit Subject:", entry.subject);
-      let newDebit = prompt("Edit Debit:", entry.debit);
-      let newCredit = prompt("Edit Credit:", entry.credit);
-      newDebit = parseFloat(newDebit);
-      newCredit = parseFloat(newCredit);
+      
+      document.getElementById("editDate").value = entry.date;
+      document.getElementById("editCategory").value = entry.category;
+      document.getElementById("editSubject").value = entry.subject || "";
+      document.getElementById("editDebit").value = entry.debit;
+      document.getElementById("editCredit").value = entry.credit;
+      
+      document.getElementById("editModal").classList.add("active");
+    }
+    
+    // Close edit modal
+    function closeEditModal() {
+      document.getElementById("editModal").classList.remove("active");
+      currentEditIndex = -1;
+    }
+    
+    // Save edited entry
+    async function saveEdit() {
+      if (currentEditIndex === -1) return;
+      
+      const newDate = document.getElementById("editDate").value;
+      const newCategory = document.getElementById("editCategory").value;
+      const newSubject = document.getElementById("editSubject").value.trim();
+      let newDebit = parseFloat(document.getElementById("editDebit").value);
+      let newCredit = parseFloat(document.getElementById("editCredit").value);
+      
+      if (!newDate || !newCategory) {
+        showNotification("Please enter date and category.", "error");
+        return;
+      }
+      
       if (isNaN(newDebit)) newDebit = 0;
       if (isNaN(newCredit)) newCredit = 0;
-
-      entries[index] = {
+      
+      entries[currentEditIndex] = {
         date: newDate,
         category: newCategory,
-        subject: newSubject || "",
+        subject: newSubject,
         debit: newDebit,
         credit: newCredit
       };
-      await saveData(); // This saves both locally and to GitHub
+      
+      await saveData();
+      renderTable(entries);
+      updateSummary();
+      updateCategoryFilterOptions();
+      
+      closeEditModal();
+      showNotification("Entry updated successfully!", "success");
+    }
+    
+    // Render table with data
+    function renderTable(data) {
+      const tbody = document.querySelector("#ledger tbody");
+      tbody.innerHTML = "";
+      
+      if (data.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px;">No entries found</td></tr>`;
+        return;
+      }
+      
+      let balance = 0;
+      
+      data.forEach((entry, index) => {
+        balance += entry.credit - entry.debit;
+        
+        const row = `<tr>
+          <td>${formatDate(entry.date)}</td>
+          <td><span class="category-badge" onclick="filterByCategory('${entry.category}')">${entry.category}</span></td>
+          <td>${entry.subject || ""}</td>
+          <td class="amount debit">${entry.debit > 0 ? '₹' + entry.debit.toFixed(2) : '-'}</td>
+          <td class="amount credit">${entry.credit > 0 ? '₹' + entry.credit.toFixed(2) : '-'}</td>
+          <td class="amount ${balance >= 0 ? 'credit' : 'debit'}">₹${balance.toFixed(2)}</td>
+          <td>
+            <button class="action-btn edit-btn" onclick="openEditModal(${index})"><i class="fas fa-edit"></i></button>
+            <button class="action-btn delete-btn" onclick="deleteEntry(${index})"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>`;
+        
+        tbody.innerHTML += row;
+      });
+    }
+    
+    // Format date for display
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-IN', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      });
+    }
+    
+    // Update summary cards
+    function updateSummary() {
+      let totalBalance = 0;
+      let totalIncome = 0;
+      let totalExpenses = 0;
+      
+      entries.forEach(entry => {
+        totalIncome += entry.credit;
+        totalExpenses += entry.debit;
+      });
+      
+      totalBalance = totalIncome - totalExpenses;
+      
+      document.getElementById("totalBalance").textContent = '₹' + totalBalance.toFixed(2);
+      document.getElementById("totalIncome").textContent = '₹' + totalIncome.toFixed(2);
+      document.getElementById("totalExpenses").textContent = '₹' + totalExpenses.toFixed(2);
+      
+      // Change color based on balance
+      const balanceElement = document.getElementById("totalBalance");
+      if (totalBalance < 0) {
+        balanceElement.style.color = 'var(--error-color)';
+      } else {
+        balanceElement.style.color = 'var(--success-color)';
+      }
+    }
+    
+    // Filter entries by category
+    function filterByCategory(category) {
+      document.getElementById('categoryFilter').value = category;
+      filterEntries();
+    }
+    
+    // Filter entries based on search and filters
+    function filterEntries() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const categoryFilter = document.getElementById('categoryFilter').value;
+      const dateFilter = document.getElementById('dateFilter').value;
+      
+      let filtered = entries;
+      
+      // Apply search filter
+      if (searchTerm) {
+        filtered = filtered.filter(entry => 
+          entry.subject.toLowerCase().includes(searchTerm) || 
+          entry.category.toLowerCase().includes(searchTerm)
+        );
+      }
+      
+      // Apply category filter
+      if (categoryFilter) {
+        filtered = filtered.filter(entry => entry.category === categoryFilter);
+      }
+      
+      // Apply date filter
+      if (dateFilter) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        const getStartOfWeek = (date) => {
+          const day = date.getDay();
+          const diff = date.getDate() - day + (day === 0 ? -6 : 1); // Adjust for Sunday
+          return new Date(date.setDate(diff));
+        };
+        
+        const getStartOfMonth = (date) => {
+          return new Date(date.getFullYear(), date.getMonth(), 1);
+        };
+        
+        const getStartOfYear = (date) => {
+          return new Date(date.getFullYear(), 0, 1);
+        };
+        
+        let startDate;
+        
+        switch (dateFilter) {
+          case 'today':
+            startDate = today;
+            break;
+          case 'week':
+            startDate = getStartOfWeek(new Date());
+            break;
+          case 'month':
+            startDate = getStartOfMonth(new Date());
+            break;
+          case 'year':
+            startDate = getStartOfYear(new Date());
+            break;
+        }
+        
+        filtered = filtered.filter(entry => {
+          const entryDate = new Date(entry.date);
+          return entryDate >= startDate;
+        });
+      }
+      
+      renderTable(filtered);
+      
+      // Update filter status message
+      let filterMessage = '';
+      if (categoryFilter) {
+        filterMessage += `Category: ${categoryFilter} `;
+      }
+      if (dateFilter) {
+        filterMessage += `Period: ${dateFilter.charAt(0).toUpperCase() + dateFilter.slice(1)} `;
+      }
+      if (searchTerm) {
+        filterMessage += `Search: "${searchTerm}" `;
+      }
+      
+      if (filterMessage) {
+        const totalAmount = filtered.reduce((acc, entry) => acc + (entry.credit - entry.debit), 0);
+        showNotification(`Filtered by ${filterMessage}- Total: ₹${totalAmount.toFixed(2)}`, "info", 5000);
+      }
+    }
+    
+    // Reset all filters
+    function showAll() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('categoryFilter').value = '';
+      document.getElementById('dateFilter').value = '';
       renderTable(entries);
     }
+    
+    // Update category filter options based on entries
+    function updateCategoryFilterOptions() {
+      const categoryFilter = document.getElementById('categoryFilter');
+      const currentValue = categoryFilter.value;
+      
+      // Get unique categories from entries
+      const categories = [...new Set(entries.map(entry => entry.category))];
+      
+      // Clear existing options except the first one
+      while (categoryFilter.options.length > 1) {
+        categoryFilter.remove(1);
+      }
+      
+      // Add categories as options
+      categories.forEach(category => {
+        const option = new Option(category, category);
+        categoryFilter.add(option);
+      });
+      
+      // Restore selected value if it exists
+      if (currentValue && categories.includes(currentValue)) {
+        categoryFilter.value = currentValue;
+      }
+    }
+    
+    // Show notification
+    function showNotification(message, type = "info", duration = 3000) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.className = 'notification';
+      notification.classList.add(type);
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, duration);
+    }
   </script>
-
 </body>
 </html>
