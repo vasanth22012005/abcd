@@ -117,5 +117,12 @@
     "subject": "Total expence",
     "debit": 78000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "College,School",
+    "subject": "Total expence",
+    "debit": 78000,
+    "credit": 0
   }
 ]
