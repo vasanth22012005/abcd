@@ -278,5 +278,12 @@
     "subject": "Matha",
     "debit": 2450,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Sivan amma",
+    "debit": 0,
+    "credit": 30500
   }
 ]
