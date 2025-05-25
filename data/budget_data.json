@@ -47,5 +47,12 @@
     "subject": "Balance",
     "debit": 6222,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Arumugachamy SP",
+    "subject": "Debit",
+    "debit": 300000,
+    "credit": 0
   }
 ]
