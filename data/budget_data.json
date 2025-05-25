@@ -40,5 +40,12 @@
     "subject": "Balance",
     "debit": 3565,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "TMB Kala",
+    "subject": "Balance",
+    "debit": 6222,
+    "credit": 0
   }
 ]
