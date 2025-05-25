@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Budget Register</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      margin: 0 10px 0 0;
+    }
+    input, select {
+      padding: 6px;
+      margin: 5px;
+    }
+    button {
+      padding: 6px 12px;
+      margin: 5px;
+      border: none;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #e5e7eb;
+    }
+    .summary {
+      margin-top: 20px;
+      padding: 10px;
+      font-weight: bold;
+      background-color: #d1fae5;
+      border: 1px solid #10b981;
+    }
+    .action-btn {
+      padding: 4px 8px;
+      margin: 2px;
+      font-size: 12px;
+    }
+    .edit-btn {
+      background-color: #facc15;
+      color: black;
+    }
+    a {
+      cursor: pointer;
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Accounts</h1>
+
+  <label>Date: <input type="date" id="date" /></label>
+  
+  <label>Category:
+    <select id="category" onchange="handleCategoryChange(this)">
+      <option value="" disabled selected>Select</option>
+      <option value="Agriculture">Agriculture</option>
+      <option value="ESSAR">ESSAR</option>
+      <option value="Miscellaneous">Miscellaneous</option>
+      <option value="Sodalaikasi">Sodalaikasi</option>
+      <option value="SR">SR</option>
+      <option value="SR Private">SR Private</option>
+      <option value="Sodalaikasi Private">Sodalaikasi Private</option>
+      <option value="FDRL 5333">FDRL 5333</option>
+      <option value="FDRL 541">FDRL 541</option>
+      <option value="KVB Kala">KVB Kala</option>
+      <option value="KVB SR">KVB SR</option>
+      <option value="TMB SR">TMB SR</option>
+      <option value="TMB Kala">TMB Kala</option>
+      <option value="KVB SRS">KVB SRS</option>
+      <option value="Others">Others</option>
+    </select>
+  </label>
+
+  <label>Subject: <input type="text" id="subject" placeholder="Enter subject or description" /></label>
+  
+  <label>Debit: <input type="number" id="debit" value="0" /></label>
+  <label>Credit: <input type="number" id="credit" value="0" /></label>
+  
+  <button onclick="addEntry()">Add</button>
+  <button onclick="showAll()">Show All</button>
+  <button onclick="saveToGitHub()">Save to GitHub</button>
+  <button onclick="loadFromGitHub()">Load from GitHub</button>
+
+  <table id="ledger">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Subject</th>
+        <th>Debit</th>
+        <th>Credit</th>
+        <th>Total</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="summary" id="balanceSummary">Total Balance: ₹0</div>
+
+  <script>
+    // GitHub configuration - REPLACE THESE VALUES with your own
+    const GITHUB_USERNAME = "vasanth22012005";
+    const GITHUB_REPO = "expense-tracker";
+    const GITHUB_TOKEN = "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"; // We'll use GitHub OAuth for security instead of hardcoding a token
+    const DATA_FILE_PATH = "data/budget_data.json";
+    
+    let entries = [];
+    let isAuthenticated = false;
+
+    // Load data when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // First try to load from localStorage as a fallback
+      loadFromLocalStorage();
+      
+      // Then try to load from GitHub
+      loadFromGitHub();
+    });
+
+    // Save data to localStorage as a backup
+    function saveToLocalStorage() {
+      localStorage.setItem('budgetEntries', JSON.stringify(entries));
+    }
+
+    // Load data from localStorage
+    function loadFromLocalStorage() {
+      const savedEntries = localStorage.getItem('budgetEntries');
+      if (savedEntries) {
+        entries = JSON.parse(savedEntries);
+        renderTable(entries);
+      }
+    }
+    
+    // GitHub API Functions
+    
+    // Authenticate with GitHub (using OAuth)
+    async function authenticateWithGitHub() {
+      // For a production app, you would implement proper OAuth flow
+      // This is a simplified version for demonstration
+      const token = prompt("Enter your GitHub Personal Access Token (needs repo scope):");
+      if (token) {
+        try {
+          // Test the token with a simple API call
+          const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}`, {
+            headers: {
+              'Authorization': `token ${token}`
+            }
+          });
+          
+          if (response.ok) {
+            isAuthenticated = true;
+            localStorage.setItem('github_token', token);
+            alert("Authentication successful!");
+            return token;
+          } else {
+            alert("Authentication failed. Please check your token.");
+            return null;
+          }
+        } catch (error) {
+          console.error("Authentication error:", error);
+          alert("Authentication error. Please try again.");
+          return null;
+        }
+      }
+      return null;
+    }
+    
+    // Get the stored token or authenticate
+    async function getAuthToken() {
+      let token = localStorage.getItem('github_token');
+      if (!token) {
+        token = await authenticateWithGitHub();
+      }
+      return token;
+    }
+    
+    // Load data from GitHub
+    async function loadFromGitHub() {
+      try {
+        // First try without authentication for public repos
+        const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${DATA_FILE_PATH}`);
+        
+        if (response.status === 404) {
+          console.log("Data file not found. Will create on first save.");
+          return;
+        }
+        
+        if (!response.ok) {
+          // If not successful, might need authentication
+          const token = await getAuthToken();
+          if (!token) return;
+          
+          const authResponse = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${DATA_FILE_PATH}`, {
+            headers: {
+              'Authorization': `token ${token}`
+            }
+          });
+          
+          if (!authResponse.ok) {
+            throw new Error(`GitHub API error: ${authResponse.status}`);
+          }
+          
+          const data = await authResponse.json();
+          const content = atob(data.content); // Decode base64
+          entries = JSON.parse(content);
+        } else {
+          const data = await response.json();
+          const content = atob(data.content); // Decode base64
+          entries = JSON.parse(content);
+        }
+        
+        // Update the UI
+        renderTable(entries);
+        // Also update localStorage as backup
+        saveToLocalStorage();
+        
+      } catch (error) {
+        console.error("Error loading data from GitHub:", error);
+        alert("Could not load data from GitHub. Using local data instead.");
+      }
+    }
+    
+    // Save data to GitHub
+    async function saveToGitHub() {
+      try {
+        const token = await getAuthToken();
+        if (!token) {
+          alert("Authentication required to save data to GitHub.");
+          return false;
+        }
+        
+        // First, check if the file already exists to get its SHA
+        let sha = null;
+        try {
+          const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${DATA_FILE_PATH}`, {
+            headers: {
+              'Authorization': `token ${token}`
+            }
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            sha = data.sha;
+          }
+        } catch (error) {
+          console.log("File doesn't exist yet, will create it");
+        }
+        
+        // Prepare the content
+        const content = btoa(JSON.stringify(entries, null, 2)); // Convert to base64
+        
+        // Prepare the request body
+        const body = {
+          message: "Update budget data",
+          content: content,
+          branch: "main" // or your default branch name
+        };
+        
+        // If the file exists, include its SHA
+        if (sha) {
+          body.sha = sha;
+        }
+        
+        // Make the API request to update/create the file
+        const saveResponse = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${DATA_FILE_PATH}`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        });
+        
+        if (!saveResponse.ok) {
+          throw new Error(`GitHub API error: ${saveResponse.status}`);
+        }
+        
+        alert("Data saved to GitHub successfully!");
+        return true;
+        
+      } catch (error) {
+        console.error("Error saving to GitHub:", error);
+        alert("Failed to save data to GitHub. Data is still saved locally.");
+        return false;
+      }
+    }
+    
+    // Save data function that saves both locally and to GitHub
+    async function saveData() {
+      // Always save locally first (as a backup)
+      saveToLocalStorage();
+      
+      // Then try to save to GitHub
+      return saveToGitHub();
+    }
+
+    function handleCategoryChange(select) {
+      if (select.value === "Others") {
+        const newCat = prompt("Enter new category name:");
+        if (newCat) {
+          const newOption = new Option(newCat, newCat);
+          select.add(newOption, select.options.length - 1);
+          select.value = newCat;
+        } else {
+          select.value = "";
+        }
+      }
+    }
+
+    function addEntry() {
+      const date = document.getElementById("date").value;
+      const category = document.getElementById("category").value;
+      const subject = document.getElementById("subject").value.trim();
+      const debit = parseFloat(document.getElementById("debit").value) || 0;
+      const credit = parseFloat(document.getElementById("credit").value) || 0;
+
+      if (!date || !category) {
+        alert("Please enter date and category.");
+        return;
+      }
+      
+      // Optional: subject can be empty, no strict check
+
+      entries.push({ date, category, subject, debit, credit });
+      saveData(); // This saves both locally and attempts to save to GitHub
+      renderTable(entries);
+      clearInputs();
+    }
+
+    function clearInputs() {
+      document.getElementById("date").value = "";
+      document.getElementById("category").value = "";
+      document.getElementById("subject").value = "";
+      document.getElementById("debit").value = 0;
+      document.getElementById("credit").value = 0;
+    }
+
+    function renderTable(data) {
+      const tbody = document.querySelector("#ledger tbody");
+      tbody.innerHTML = "";
+
+      let balance = 0;
+
+      data.forEach((entry, index) => {
+        balance += entry.credit - entry.debit;
+
+        const row = `<tr>
+          <td>${entry.date}</td>
+          <td><a onclick="filterByCategory('${entry.category}')">${entry.category}</a></td>
+          <td>${entry.subject || ""}</td>
+          <td>${entry.debit}</td>
+          <td>${entry.credit}</td>
+          <td>${balance.toFixed(2)}</td>
+          <td>
+            <button class="action-btn edit-btn" onclick="editEntry(${index})">Edit</button>
+            <button class="action-btn" onclick="deleteEntry(${index})">Delete</button>
+          </td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+
+      document.getElementById("balanceSummary").innerText = `Total Balance: ₹${balance.toFixed(2)}`;
+    }
+
+    function filterByCategory(category) {
+      const filtered = entries.filter(e => e.category === category);
+      renderTable(filtered);
+      document.getElementById("balanceSummary").innerText = `Filtered by ${category} — Total Balance: ₹${filtered.reduce((acc,e) => acc + e.credit - e.debit, 0).toFixed(2)}`;
+    }
+
+    function showAll() {
+      renderTable(entries);
+    }
+
+    function deleteEntry(index) {
+      if (confirm("Delete this entry?")) {
+        entries.splice(index, 1);
+        saveData(); // This saves both locally and attempts to save to GitHub
+        renderTable(entries);
+      }
+    }
+
+    function editEntry(index) {
+      const entry = entries[index];
+      const newDate = prompt("Edit Date:", entry.date);
+      if (!newDate) return;
+      const newCategory = prompt("Edit Category:", entry.category);
+      if (!newCategory) return;
+      const newSubject = prompt("Edit Subject:", entry.subject);
+      let newDebit = prompt("Edit Debit:", entry.debit);
+      let newCredit = prompt("Edit Credit:", entry.credit);
+      newDebit = parseFloat(newDebit);
+      newCredit = parseFloat(newCredit);
+      if (isNaN(newDebit)) newDebit = 0;
+      if (isNaN(newCredit)) newCredit = 0;
+
+      entries[index] = {
+        date: newDate,
+        category: newCategory,
+        subject: newSubject || "",
+        debit: newDebit,
+        credit: newCredit
+      };
+      saveData(); // This saves both locally and attempts to save to GitHub
+      renderTable(entries);
+    }
+  </script>
+
+</body>
+</html>
