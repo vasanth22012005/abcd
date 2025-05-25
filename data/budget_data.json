@@ -1,12 +1,5 @@
 [
   {
-    "date": "2025-05-31",
-    "category": "KVB SR",
-    "subject": "Money",
-    "debit": 901,
-    "credit": 900
-  },
-  {
     "date": "2024-01-25",
     "category": "SR Private",
     "subject": "ui",
