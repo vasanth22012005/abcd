@@ -2,66 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Budget Register</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f9fafb;
-      padding: 30px;
+      padding: 15px;
+      margin: 0;
     }
     h1 {
       text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 200px;
     }
     label {
-      margin: 0 10px 0 0;
+      margin-bottom: 5px;
+      font-weight: 500;
     }
     input, select {
-      padding: 6px;
-      margin: 5px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
     }
     button {
-      padding: 6px 12px;
-      margin: 5px;
+      padding: 10px 15px;
       border: none;
       background-color: #2563eb;
       color: white;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 16px;
+      flex: 1;
+      min-width: 120px;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #1d4ed8;
     }
     table {
       width: 100%;
       margin-top: 20px;
       border-collapse: collapse;
       background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
+      border: 1px solid #e5e7eb;
+      padding: 12px 8px;
       text-align: center;
     }
     th {
       background-color: #e5e7eb;
+      font-weight: 600;
     }
     .summary {
       margin-top: 20px;
-      padding: 10px;
+      padding: 15px;
       font-weight: bold;
       background-color: #d1fae5;
       border: 1px solid #10b981;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 18px;
     }
     .action-btn {
-      padding: 4px 8px;
+      padding: 6px 10px;
       margin: 2px;
-      font-size: 12px;
+      font-size: 14px;
+      border-radius: 4px;
     }
     .edit-btn {
       background-color: #facc15;
       color: black;
     }
+    .delete-btn {
+      background-color: #ef4444;
+    }
     a {
       cursor: pointer;
       color: #2563eb;
       text-decoration: underline;
+    }
+    #saveMessage {
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      table {
+        font-size: 14px;
+      }
+      th, td {
+        padding: 8px 4px;
+      }
+      .action-btn {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    }
+    
+    /* For very small screens */
+    @media (max-width: 480px) {
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .form-group {
+        flex: 1 1 100%;
+      }
+      button {
+        flex: 1 1 auto;
+      }
     }
   </style>
 </head>
@@ -69,38 +150,55 @@
 
   <h1>My Accounts</h1>
 
-  <label>Date: <input type="date" id="date" /></label>
-  
-  <label>Category:
-    <select id="category" onchange="handleCategoryChange(this)">
-      <option value="" disabled selected>Select</option>
-      <option value="Agriculture">Agriculture</option>
-      <option value="ESSAR">ESSAR</option>
-      <option value="Miscellaneous">Miscellaneous</option>
-      <option value="Sodalaikasi">Sodalaikasi</option>
-      <option value="SR">SR</option>
-      <option value="SR Private">SR Private</option>
-      <option value="Sodalaikasi Private">Sodalaikasi Private</option>
-      <option value="FDRL 5333">FDRL 5333</option>
-      <option value="FDRL 541">FDRL 541</option>
-      <option value="KVB Kala">KVB Kala</option>
-      <option value="KVB SR">KVB SR</option>
-      <option value="TMB SR">TMB SR</option>
-      <option value="TMB Kala">TMB Kala</option>
-      <option value="KVB SRS">KVB SRS</option>
-      <option value="Others">Others</option>
-    </select>
-  </label>
+  <div class="form-container">
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" id="date" />
+    </div>
+    
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select id="category" onchange="handleCategoryChange(this)">
+        <option value="" disabled selected>Select</option>
+        <option value="Agriculture">Agriculture</option>
+        <option value="ESSAR">ESSAR</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+        <option value="Sodalaikasi">Sodalaikasi</option>
+        <option value="SR">SR</option>
+        <option value="SR Private">SR Private</option>
+        <option value="Sodalaikasi Private">Sodalaikasi Private</option>
+        <option value="FDRL 5333">FDRL 5333</option>
+        <option value="FDRL 541">FDRL 541</option>
+        <option value="KVB Kala">KVB Kala</option>
+        <option value="KVB SR">KVB SR</option>
+        <option value="TMB SR">TMB SR</option>
+        <option value="TMB Kala">TMB Kala</option>
+        <option value="KVB SRS">KVB SRS</option>
+        <option value="Others">Others</option>
+      </select>
+    </div>
 
-  <label>Subject: <input type="text" id="subject" placeholder="Enter subject or description" /></label>
+    <div class="form-group">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" placeholder="Enter subject or description" />
+    </div>
+    
+    <div class="form-group">
+      <label for="debit">Debit:</label>
+      <input type="number" id="debit" value="0" />
+    </div>
+    
+    <div class="form-group">
+      <label for="credit">Credit:</label>
+      <input type="number" id="credit" value="0" />
+    </div>
+  </div>
   
-  <label>Debit: <input type="number" id="debit" value="0" /></label>
-  <label>Credit: <input type="number" id="credit" value="0" /></label>
-  
-  <button onclick="addEntry()">Add</button>
-  <button onclick="showAll()">Show All</button>
-  <button onclick="saveToGitHub()">Save to GitHub</button>
-  <button onclick="loadFromGitHub()">Refresh Data</button>
+  <div class="button-group">
+    <button onclick="addEntry()">Add</button>
+    <button onclick="showAll()">Show All</button>
+    <button onclick="loadFromGitHub()">Refresh Data</button>
+  </div>
 
   <table id="ledger">
     <thead>
@@ -119,7 +217,7 @@
 
   <div class="summary" id="balanceSummary">Total Balance: ₹0</div>
   <div id="saveMessage" style="display:none; background-color: #fef3c7; color: #92400e; padding: 10px; margin-top: 10px; border-radius: 4px; text-align: center;">
-    Data saved locally. To save to GitHub, click "Save to GitHub" button.
+    Data saved successfully.
   </div>
 
   <script>
@@ -130,20 +228,19 @@
     
     // Your personal access token with repo scope
     // This token should have 'repo' scope permissions
-    const GITHUB_TOKEN = ""; // We'll get this from localStorage or prompt the user
+    const GITHUB_TOKEN = "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";
     
     let entries = [];
 
     // Load data when page loads
     document.addEventListener('DOMContentLoaded', function() {
-      // First try to load from localStorage as a fallback
-      loadFromLocalStorage();
-      
-      // Then try to load from GitHub
-      loadFromGitHub();
-      
-      // Check if we have a token stored
-      checkGitHubToken();
+      // Always try to load from GitHub first
+      loadFromGitHub().then(() => {
+        // If GitHub load fails, fall back to localStorage
+        if (entries.length === 0) {
+          loadFromLocalStorage();
+        }
+      });
     });
 
     // Save data to localStorage as a backup
@@ -160,96 +257,51 @@
       }
     }
     
-    // Check if we have a GitHub token stored
-    function checkGitHubToken() {
-      const token = localStorage.getItem('github_token');
-      if (!token) {
-        // If no token is stored, show a message to the user
-        const saveMessage = document.getElementById('saveMessage');
-        if (saveMessage) {
-          saveMessage.innerHTML = 'To enable automatic saving to GitHub, please click "Save to GitHub" button and enter your GitHub token.';
-          saveMessage.style.display = 'block';
-        }
-      }
-    }
-    
-    // Get GitHub token - either from localStorage or by prompting the user
+    // Get GitHub token - uses the hardcoded token
     async function getGitHubToken() {
-      let token = localStorage.getItem('github_token');
-      
-      if (!token) {
-        token = prompt("Enter your GitHub Personal Access Token (needs repo scope).\nThis will be stored in your browser for future use.");
-        
-        if (token) {
-          // Test the token before saving it
-          try {
-            const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}`, {
-              headers: {
-                'Authorization': `token ${token}`
-              }
-            });
-            
-            if (response.ok) {
-              localStorage.setItem('github_token', token);
-              return token;
-            } else {
-              alert("Invalid token or repository not found. Please check your token and try again.");
-              return null;
-            }
-          } catch (error) {
-            console.error("Error validating token:", error);
-            alert("Error validating token. Please try again.");
-            return null;
-          }
-        } else {
-          return null;
-        }
-      }
-      
-      return token;
+      return GITHUB_TOKEN;
     }
     
     // Load data from GitHub
     async function loadFromGitHub() {
       try {
-        // First try without authentication for public repos
-        const response = await fetch(`https://raw.githubusercontent.com/vasanth22012005/expense-tracker/main/data/budget_data.json`);
+        // Try to load with authentication
+        const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${DATA_FILE_PATH}`, {
+          headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`
+          }
+        });
         
         if (!response.ok) {
           throw new Error(`Failed to load data: ${response.status}`);
         }
         
-        const data = await response.json();
-        entries = data;
+        const fileData = await response.json();
+        const content = atob(fileData.content); // Decode base64
+        entries = JSON.parse(content);
         
         // Update the UI
         renderTable(entries);
         // Also update localStorage as backup
         saveToLocalStorage();
         
+        return true;
       } catch (error) {
         console.error("Error loading data:", error);
         // Don't show alert to user, just use local data
+        return false;
       }
     }
     
     // Save data to GitHub
     async function saveToGitHub() {
-      // Get the GitHub token
-      const token = await getGitHubToken();
-      
-      if (!token) {
-        alert("GitHub token is required to save data to GitHub.");
-        return false;
-      }
-      
       try {
         // First, check if the file already exists to get its SHA
         let sha = null;
         try {
           const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${DATA_FILE_PATH}`, {
             headers: {
-              'Authorization': `token ${token}`
+              'Authorization': `token ${GITHUB_TOKEN}`
             }
           });
           
@@ -280,27 +332,13 @@
         const saveResponse = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${DATA_FILE_PATH}`, {
           method: 'PUT',
           headers: {
-            'Authorization': `token ${token}`,
+            'Authorization': `token ${GITHUB_TOKEN}`,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(body)
         });
         
         if (!saveResponse.ok) {
-          // If we get a 401 Unauthorized, the token might be invalid
-          if (saveResponse.status === 401) {
-            // Clear the stored token and ask for a new one
-            localStorage.removeItem('github_token');
-            alert("Your GitHub token has expired or is invalid. Please enter a new token.");
-            const newToken = await getGitHubToken();
-            if (newToken) {
-              // Try again with the new token
-              return saveToGitHub();
-            } else {
-              throw new Error("Authentication failed. Please try again with a valid token.");
-            }
-          }
-          
           const errorData = await saveResponse.json();
           throw new Error(`GitHub API error: ${saveResponse.status} - ${errorData.message}`);
         }
@@ -319,7 +357,15 @@
         
       } catch (error) {
         console.error("Error saving to GitHub:", error);
-        alert("Failed to save data to GitHub: " + error.message);
+        // Don't show alert to avoid disrupting user experience
+        const saveMessage = document.getElementById('saveMessage');
+        if (saveMessage) {
+          saveMessage.innerHTML = 'Error saving to GitHub. Data saved locally.';
+          saveMessage.style.display = 'block';
+          setTimeout(() => {
+            saveMessage.style.display = 'none';
+          }, 3000);
+        }
         return false;
       }
     }
@@ -329,28 +375,22 @@
       // Always save locally first
       saveToLocalStorage();
       
-      // Then try to save to GitHub if we have a token
-      const token = localStorage.getItem('github_token');
-      if (token) {
-        try {
-          const result = await saveToGitHub();
-          return result;
-        } catch (error) {
-          console.error("Error in saveData:", error);
-          // If GitHub save fails, at least we saved locally
-          return false;
-        }
-      } else {
-        // If no token, just show a message
+      // Always try to save to GitHub with the hardcoded token
+      try {
+        const result = await saveToGitHub();
+        return result;
+      } catch (error) {
+        console.error("Error in saveData:", error);
+        // If GitHub save fails, at least we saved locally
         const saveMessage = document.getElementById('saveMessage');
         if (saveMessage) {
-          saveMessage.innerHTML = 'Data saved locally. To save to GitHub, click "Save to GitHub" button.';
+          saveMessage.innerHTML = 'Data saved locally, but GitHub sync failed. Please try again later.';
           saveMessage.style.display = 'block';
           setTimeout(() => {
             saveMessage.style.display = 'none';
           }, 3000);
         }
-        return true;
+        return false;
       }
     }
 
@@ -386,10 +426,7 @@
       renderTable(entries);
       
       // Force a save to GitHub to ensure sync
-      const token = localStorage.getItem('github_token');
-      if (token) {
-        saveToGitHub();
-      }
+      saveToGitHub();
       
       clearInputs();
     }
@@ -415,12 +452,12 @@
           <td>${entry.date}</td>
           <td><a onclick="filterByCategory('${entry.category}')">${entry.category}</a></td>
           <td>${entry.subject || ""}</td>
-          <td>${entry.debit}</td>
-          <td>${entry.credit}</td>
-          <td>${balance.toFixed(2)}</td>
+          <td>₹${entry.debit}</td>
+          <td>₹${entry.credit}</td>
+          <td>₹${balance.toFixed(2)}</td>
           <td>
             <button class="action-btn edit-btn" onclick="editEntry(${index})">Edit</button>
-            <button class="action-btn" onclick="deleteEntry(${index})">Delete</button>
+            <button class="action-btn delete-btn" onclick="deleteEntry(${index})">Delete</button>
           </td>
         </tr>`;
         tbody.innerHTML += row;
@@ -432,7 +469,17 @@
     function filterByCategory(category) {
       const filtered = entries.filter(e => e.category === category);
       renderTable(filtered);
-      document.getElementById("balanceSummary").innerText = `Filtered by ${category} — Total Balance: ₹${filtered.reduce((acc,e) => acc + e.credit - e.debit, 0).toFixed(2)}`;
+      
+      // Show a back button when filtering
+      const backButton = document.createElement('button');
+      backButton.innerText = 'Back to All';
+      backButton.onclick = showAll;
+      backButton.style.marginTop = '10px';
+      
+      const summary = document.getElementById("balanceSummary");
+      summary.innerHTML = `Filtered by <strong>${category}</strong> — Total Balance: ₹${filtered.reduce((acc,e) => acc + e.credit - e.debit, 0).toFixed(2)}`;
+      summary.appendChild(document.createElement('br'));
+      summary.appendChild(backButton);
     }
 
     function showAll() {
@@ -446,10 +493,7 @@
         renderTable(entries);
         
         // Force a save to GitHub to ensure sync
-        const token = localStorage.getItem('github_token');
-        if (token) {
-          saveToGitHub();
-        }
+        saveToGitHub();
       }
     }
 
@@ -478,10 +522,7 @@
       renderTable(entries);
       
       // Force a save to GitHub to ensure sync
-      const token = localStorage.getItem('github_token');
-      if (token) {
-        saveToGitHub();
-      }
+      saveToGitHub();
     }
   </script>
 
