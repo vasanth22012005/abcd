@@ -68,5 +68,12 @@
     "subject": "Muthukumar R",
     "debit": 0,
     "credit": 100000
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Sivan.T",
+    "subject": "Debit",
+    "debit": 72875,
+    "credit": 0
   }
 ]
