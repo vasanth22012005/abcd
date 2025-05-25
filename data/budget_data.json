@@ -369,5 +369,12 @@
     "subject": "Victor",
     "debit": 0,
     "credit": 10000
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Rent advance",
+    "subject": "Suresh.T",
+    "debit": 0,
+    "credit": 10000
   }
 ]
