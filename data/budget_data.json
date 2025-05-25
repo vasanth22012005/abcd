@@ -320,5 +320,12 @@
     "subject": "Sounthar",
     "debit": 0,
     "credit": 5550
+  },
+  {
+    "date": "2025-04-05",
+    "category": "Consumers",
+    "subject": "Andrews.M",
+    "debit": 200000,
+    "credit": 0
   }
 ]
