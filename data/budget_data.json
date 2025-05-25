@@ -26,5 +26,12 @@
     "subject": "Debit",
     "debit": 302793,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "KVB Kala",
+    "subject": "Debit",
+    "debit": 304749,
+    "credit": 0
   }
 ]
