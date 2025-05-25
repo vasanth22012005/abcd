@@ -96,5 +96,12 @@
     "subject": "Total",
     "debit": 0,
     "credit": 105650
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Rajammal",
+    "subject": "Total debit",
+    "debit": 64400,
+    "credit": 0
   }
 ]
