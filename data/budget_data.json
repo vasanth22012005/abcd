@@ -341,5 +341,12 @@
     "subject": "Vaithilingam.K",
     "debit": 500000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "SR Private",
+    "subject": "Debit",
+    "debit": 1000000,
+    "credit": 0
   }
 ]
