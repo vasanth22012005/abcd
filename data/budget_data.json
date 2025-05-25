@@ -159,5 +159,12 @@
     "subject": "Balance",
     "debit": 41476,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "KVB SRS",
+    "subject": "Balance",
+    "debit": 335000,
+    "credit": 0
   }
 ]
