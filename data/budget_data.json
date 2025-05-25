@@ -5,5 +5,12 @@
     "subject": "Money",
     "debit": 901,
     "credit": 900
+  },
+  {
+    "date": "2024-01-25",
+    "category": "SR Private",
+    "subject": "ui",
+    "debit": 0,
+    "credit": 1000
   }
 ]
