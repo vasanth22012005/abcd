@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Register - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --primary-hover: #4338ca;
+      --secondary-color: #10b981;
+      --text-color: #1f2937;
+      --light-text: #6b7280;
+      --background: #f9fafb;
+      --card-bg: #ffffff;
+      --border-color: #e5e7eb;
+      --error-color: #ef4444;
+      --success-color: #10b981;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .login-container {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 420px;
+      padding: 30px;
+      transition: transform 0.3s ease;
+    }
+    
+    .login-container:hover {
+      transform: translateY(-5px);
+    }
+    
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+    
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--light-text);
+    }
+    
+    .register-link a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+    
+    .error-message {
+      color: var(--error-color);
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+    
+    .success-message {
+      color: var(--success-color);
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+    
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo svg {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .register-form {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4f46e5">
+        <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+      </svg>
+    </div>
+    
+    <!-- Login Form -->
+    <div id="loginForm">
+      <h1>Budget Register</h1>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" />
+        <div class="error-message" id="usernameError">Please enter a valid username</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" />
+        <div class="error-message" id="passwordError">Please enter your password</div>
+      </div>
+      
+      <button onclick="login()">Login</button>
+      <div class="error-message" id="loginError">Invalid username or password</div>
+      
+      <div class="register-link">
+        Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a>
+      </div>
+    </div>
+    
+    <!-- Register Form -->
+    <div id="registerForm" class="register-form">
+      <h1>Create Account</h1>
+      <div class="form-group">
+        <label for="newUsername">Username</label>
+        <input type="text" id="newUsername" placeholder="Choose a username" />
+        <div class="error-message" id="newUsernameError">Username must be at least 3 characters</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="newPassword">Password</label>
+        <input type="password" id="newPassword" placeholder="Choose a password" />
+        <div class="error-message" id="newPasswordError">Password must be at least 6 characters</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+      </div>
+      
+      <button onclick="register()">Register</button>
+      <div class="success-message" id="registerSuccess">Registration successful! You can now login.</div>
+      
+      <div class="register-link">
+        Already have an account? <a href="#" onclick="showLoginForm()">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // User data storage
+    const USERS_KEY = 'budget_app_users';
+    
+    // Show/hide forms
+    function showRegisterForm() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'block';
+    }
+    
+    function showLoginForm() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('registerForm').style.display = 'none';
+    }
+    
+    // Get users from localStorage
+    function getUsers() {
+      const users = localStorage.getItem(USERS_KEY);
+      return users ? JSON.parse(users) : [];
+    }
+    
+    // Save users to localStorage
+    function saveUsers(users) {
+      localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    }
+    
+    // Register new user
+    function register() {
+      // Reset error messages
+      document.getElementById('newUsernameError').style.display = 'none';
+      document.getElementById('newPasswordError').style.display = 'none';
+      document.getElementById('confirmPasswordError').style.display = 'none';
+      document.getElementById('registerSuccess').style.display = 'none';
+      
+      // Get form values
+      const username = document.getElementById('newUsername').value.trim();
+      const password = document.getElementById('newPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      
+      // Validate inputs
+      let isValid = true;
+      
+      if (username.length < 3) {
+        document.getElementById('newUsernameError').style.display = 'block';
+        isValid = false;
+      }
+      
+      if (password.length < 6) {
+        document.getElementById('newPasswordError').style.display = 'block';
+        isValid = false;
+      }
+      
+      if (password !== confirmPassword) {
+        document.getElementById('confirmPasswordError').style.display = 'block';
+        isValid = false;
+      }
+      
+      if (!isValid) return;
+      
+      // Check if username already exists
+      const users = getUsers();
+      if (users.some(user => user.username === username)) {
+        document.getElementById('newUsernameError').textContent = 'Username already exists';
+        document.getElementById('newUsernameError').style.display = 'block';
+        return;
+      }
+      
+      // Add new user
+      users.push({ username, password });
+      saveUsers(users);
+      
+      // Show success message
+      document.getElementById('registerSuccess').style.display = 'block';
+      
+      // Clear form
+      document.getElementById('newUsername').value = '';
+      document.getElementById('newPassword').value = '';
+      document.getElementById('confirmPassword').value = '';
+      
+      // Switch back to login form after 2 seconds
+      setTimeout(showLoginForm, 2000);
+    }
+    
+    // Login user
+    function login() {
+      // Reset error messages
+      document.getElementById('usernameError').style.display = 'none';
+      document.getElementById('passwordError').style.display = 'none';
+      document.getElementById('loginError').style.display = 'none';
+      
+      // Get form values
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      
+      // Validate inputs
+      let isValid = true;
+      
+      if (!username) {
+        document.getElementById('usernameError').style.display = 'block';
+        isValid = false;
+      }
+      
+      if (!password) {
+        document.getElementById('passwordError').style.display = 'block';
+        isValid = false;
+      }
+      
+      if (!isValid) return;
+      
+      // Check credentials
+      const users = getUsers();
+      const user = users.find(user => user.username === username && user.password === password);
+      
+      if (user) {
+        // Store logged in user
+        localStorage.setItem('currentUser', username);
+        
+        // Redirect to main app
+        window.location.href = 'index.html';
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    }
+    
+    // Check if user is already logged in
+    function checkLoggedIn() {
+      const currentUser = localStorage.getItem('currentUser');
+      if (currentUser) {
+        window.location.href = 'index.html';
+      }
+    }
+    
+    // Initialize
+    checkLoggedIn();
+    
+    // Add event listeners for Enter key
+    document.getElementById('password').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        login();
+      }
+    });
+    
+    document.getElementById('confirmPassword').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        register();
+      }
+    });
+  </script>
+</body>
+</html>
