@@ -215,5 +215,12 @@
     "subject": "Selvam.Arisi",
     "debit": 200000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Ramajeyam.Mari",
+    "debit": 600000,
+    "credit": 0
   }
 ]
