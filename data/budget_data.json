@@ -103,5 +103,12 @@
     "subject": "Total debit",
     "debit": 64400,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Sodalaikasi Private",
+    "subject": "Total",
+    "debit": 400000,
+    "credit": 0
   }
 ]
