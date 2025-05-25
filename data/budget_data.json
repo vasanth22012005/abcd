@@ -264,5 +264,12 @@
     "subject": "Arulraj.pkpm",
     "debit": 20000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Marichelvam.S",
+    "debit": 100000,
+    "credit": 0
   }
 ]
