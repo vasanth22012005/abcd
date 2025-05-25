@@ -355,5 +355,12 @@
     "subject": "Balance",
     "debit": 13799,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Rent advance",
+    "subject": "Vasanthi",
+    "debit": 0,
+    "credit": 10000
   }
 ]
