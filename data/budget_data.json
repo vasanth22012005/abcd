@@ -208,5 +208,12 @@
     "subject": "Pandara.M",
     "debit": 200000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Selvam.Arisi",
+    "debit": 200000,
+    "credit": 0
   }
 ]
