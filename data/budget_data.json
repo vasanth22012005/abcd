@@ -348,5 +348,12 @@
     "subject": "Debit",
     "debit": 1000000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "TMB SR",
+    "subject": "Balance",
+    "debit": 13799,
+    "credit": 0
   }
 ]
