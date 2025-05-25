@@ -334,5 +334,12 @@
     "subject": "Sudalaikasi.R",
     "debit": 200000,
     "credit": 0
+  },
+  {
+    "date": "2025-04-18",
+    "category": "Consumers",
+    "subject": "Vaithilingam.K",
+    "debit": 500000,
+    "credit": 0
   }
 ]
