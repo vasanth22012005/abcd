@@ -131,5 +131,12 @@
     "subject": "Total",
     "debit": 0,
     "credit": 135710
+  },
+  {
+    "date": "2025-05-01",
+    "category": "FDRL 5333",
+    "subject": "",
+    "debit": 701753,
+    "credit": 0
   }
 ]
