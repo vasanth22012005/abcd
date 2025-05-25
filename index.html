@@ -287,6 +287,20 @@
         });
         
         if (!saveResponse.ok) {
+          // If we get a 401 Unauthorized, the token might be invalid
+          if (saveResponse.status === 401) {
+            // Clear the stored token and ask for a new one
+            localStorage.removeItem('github_token');
+            alert("Your GitHub token has expired or is invalid. Please enter a new token.");
+            const newToken = await getGitHubToken();
+            if (newToken) {
+              // Try again with the new token
+              return saveToGitHub();
+            } else {
+              throw new Error("Authentication failed. Please try again with a valid token.");
+            }
+          }
+          
           const errorData = await saveResponse.json();
           throw new Error(`GitHub API error: ${saveResponse.status} - ${errorData.message}`);
         }
@@ -318,7 +332,14 @@
       // Then try to save to GitHub if we have a token
       const token = localStorage.getItem('github_token');
       if (token) {
-        return saveToGitHub();
+        try {
+          const result = await saveToGitHub();
+          return result;
+        } catch (error) {
+          console.error("Error in saveData:", error);
+          // If GitHub save fails, at least we saved locally
+          return false;
+        }
       } else {
         // If no token, just show a message
         const saveMessage = document.getElementById('saveMessage');
@@ -346,7 +367,7 @@
       }
     }
 
-    function addEntry() {
+    async function addEntry() {
       const date = document.getElementById("date").value;
       const category = document.getElementById("category").value;
       const subject = document.getElementById("subject").value.trim();
@@ -361,8 +382,15 @@
       // Optional: subject can be empty, no strict check
 
       entries.push({ date, category, subject, debit, credit });
-      saveData(); // This saves both locally and attempts to save to GitHub
+      await saveData(); // This saves both locally and to GitHub
       renderTable(entries);
+      
+      // Force a save to GitHub to ensure sync
+      const token = localStorage.getItem('github_token');
+      if (token) {
+        saveToGitHub();
+      }
+      
       clearInputs();
     }
 
@@ -411,15 +439,21 @@
       renderTable(entries);
     }
 
-    function deleteEntry(index) {
+    async function deleteEntry(index) {
       if (confirm("Delete this entry?")) {
         entries.splice(index, 1);
-        saveData(); // This saves both locally and attempts to save to GitHub
+        await saveData(); // This saves both locally and to GitHub
         renderTable(entries);
+        
+        // Force a save to GitHub to ensure sync
+        const token = localStorage.getItem('github_token');
+        if (token) {
+          saveToGitHub();
+        }
       }
     }
 
-    function editEntry(index) {
+    async function editEntry(index) {
       const entry = entries[index];
       const newDate = prompt("Edit Date:", entry.date);
       if (!newDate) return;
@@ -440,8 +474,14 @@
         debit: newDebit,
         credit: newCredit
       };
-      saveData(); // This saves both locally and attempts to save to GitHub
+      await saveData(); // This saves both locally and to GitHub
       renderTable(entries);
+      
+      // Force a save to GitHub to ensure sync
+      const token = localStorage.getItem('github_token');
+      if (token) {
+        saveToGitHub();
+      }
     }
   </script>
 
