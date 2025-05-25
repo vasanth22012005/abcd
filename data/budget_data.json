@@ -292,5 +292,12 @@
     "subject": "Kutty",
     "debit": 0,
     "credit": 40000
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "VMS",
+    "debit": 100000,
+    "credit": 0
   }
 ]
