@@ -152,5 +152,12 @@
     "subject": "Totel",
     "debit": 249066,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "FDRL 541",
+    "subject": "Balance",
+    "debit": 41476,
+    "credit": 0
   }
 ]
