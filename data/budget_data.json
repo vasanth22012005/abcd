@@ -299,5 +299,12 @@
     "subject": "VMS",
     "debit": 100000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Chellapandi",
+    "debit": 5000,
+    "credit": 0
   }
 ]
