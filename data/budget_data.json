@@ -89,5 +89,12 @@
     "subject": "Total",
     "debit": 0,
     "credit": 720480
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Rent",
+    "subject": "Total",
+    "debit": 0,
+    "credit": 105650
   }
 ]
