@@ -285,5 +285,12 @@
     "subject": "Sivan amma(5/17_5/20)",
     "debit": 0,
     "credit": 30500
+  },
+  {
+    "date": "2022-05-01",
+    "category": "Consumers",
+    "subject": "Kutty",
+    "debit": 0,
+    "credit": 40000
   }
 ]
