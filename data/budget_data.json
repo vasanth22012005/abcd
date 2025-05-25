@@ -5,5 +5,12 @@
     "subject": "R",
     "debit": 0,
     "credit": 10000
+  },
+  {
+    "date": "2025-05-31",
+    "category": "KVB SR",
+    "subject": "Money",
+    "debit": 9000,
+    "credit": 0
   }
 ]
