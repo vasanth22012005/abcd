@@ -257,5 +257,12 @@
     "subject": "Mayandi.A",
     "debit": 37890,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Arulraj.pkpm",
+    "debit": 20000,
+    "credit": 0
   }
 ]
