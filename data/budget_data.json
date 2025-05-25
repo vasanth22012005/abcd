@@ -222,5 +222,12 @@
     "subject": "Ramajeyam.Mari",
     "debit": 600000,
     "credit": 0
+  },
+  {
+    "date": "2024-10-01",
+    "category": "Consumers",
+    "subject": "Madasamy.M",
+    "debit": 50000,
+    "credit": 0
   }
 ]
