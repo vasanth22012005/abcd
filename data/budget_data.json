@@ -194,5 +194,12 @@
     "subject": "Mariappan.R",
     "debit": 250000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Manogar.NST",
+    "debit": 1500000,
+    "credit": 0
   }
 ]
