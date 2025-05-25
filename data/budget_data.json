@@ -145,5 +145,12 @@
     "subject": "Debit",
     "debit": 4689964,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Miscellaneous",
+    "subject": "Totel",
+    "debit": 249066,
+    "credit": 0
   }
 ]
