@@ -138,5 +138,12 @@
     "subject": "",
     "debit": 701753,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "ESSAR",
+    "subject": "Debit",
+    "debit": 4689964,
+    "credit": 0
   }
 ]
