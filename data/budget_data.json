@@ -229,5 +229,12 @@
     "subject": "Madasamy.M",
     "debit": 50000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Kani.K",
+    "debit": 2000,
+    "credit": 0
   }
 ]
