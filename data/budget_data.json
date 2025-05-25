@@ -327,5 +327,12 @@
     "subject": "Andrews.M",
     "debit": 200000,
     "credit": 0
+  },
+  {
+    "date": "2025-04-22",
+    "category": "Consumers",
+    "subject": "Sudalaikasi.R",
+    "debit": 200000,
+    "credit": 0
   }
 ]
