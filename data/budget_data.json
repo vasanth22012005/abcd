@@ -250,5 +250,12 @@
     "subject": "Lingam.M",
     "debit": 80000,
     "credit": 0
+  },
+  {
+    "date": "2024-10-30",
+    "category": "Consumers",
+    "subject": "Daniel Isac",
+    "debit": 30000,
+    "credit": 0
   }
 ]
