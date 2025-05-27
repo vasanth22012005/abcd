@@ -957,5 +957,12 @@
     "subject": "Surandai expense",
     "debit": 2000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Arumugachamy SP",
+    "subject": "Cash",
+    "debit": 0,
+    "credit": 50000
   }
 ]
