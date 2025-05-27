@@ -362,5 +362,12 @@
     "subject": "Suresh.T",
     "debit": 0,
     "credit": 10000
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Lingam M",
+    "debit": 0,
+    "credit": 1600
   }
 ]
