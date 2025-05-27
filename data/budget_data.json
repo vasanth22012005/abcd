@@ -1195,5 +1195,12 @@
     "subject": "Vaithiyer",
     "debit": 500,
     "credit": 0
+  },
+  {
+    "date": "2025-05-25",
+    "category": "Miscellaneous",
+    "subject": "Milk",
+    "debit": 1800,
+    "credit": 0
   }
 ]
