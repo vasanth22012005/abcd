@@ -1153,5 +1153,12 @@
     "subject": "Ramajeyam",
     "debit": 12000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-22",
+    "category": "SR",
+    "subject": "Vettivel",
+    "debit": 0,
+    "credit": 400
   }
 ]
