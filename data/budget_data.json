@@ -516,5 +516,12 @@
     "subject": "For kadappa",
     "debit": 275000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-03",
+    "category": "FDRL 5333",
+    "subject": "For essar",
+    "debit": 0,
+    "credit": 35000
   }
 ]
