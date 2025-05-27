@@ -943,5 +943,12 @@
     "subject": "To 541",
     "debit": 0,
     "credit": 50000
+  },
+  {
+    "date": "2025-05-17",
+    "category": "FDRL 5333",
+    "subject": "From 5333",
+    "debit": 50000,
+    "credit": 0
   }
 ]
