@@ -502,5 +502,12 @@
     "subject": "For essar",
     "debit": 0,
     "credit": 60000
+  },
+  {
+    "date": "2025-05-03",
+    "category": "SR Private",
+    "subject": "For essar",
+    "debit": 0,
+    "credit": 100000
   }
 ]
