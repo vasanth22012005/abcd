@@ -411,5 +411,12 @@
     "subject": "Zerox",
     "debit": 280,
     "credit": 0
+  },
+  {
+    "date": "2025-05-02",
+    "category": "Miscellaneous",
+    "subject": "Santhy",
+    "debit": 10000,
+    "credit": 0
   }
 ]
