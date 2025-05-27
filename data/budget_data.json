@@ -810,5 +810,12 @@
     "subject": "Coconut",
     "debit": 0,
     "credit": 13650
+  },
+  {
+    "date": "2025-05-12",
+    "category": "Miscellaneous",
+    "subject": "Gas",
+    "debit": 900,
+    "credit": 0
   }
 ]
