@@ -1167,5 +1167,12 @@
     "subject": "Murugan.petrol",
     "debit": 1000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-23",
+    "category": "Consumers",
+    "subject": "Anburose(sudalai)",
+    "debit": 200000,
+    "credit": 0
   }
 ]
