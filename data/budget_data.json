@@ -824,5 +824,12 @@
     "subject": "Kutty",
     "debit": 300,
     "credit": 0
+  },
+  {
+    "date": "2025-05-14",
+    "category": "Sodalaikasi Private",
+    "subject": "Cash",
+    "debit": 0,
+    "credit": 200000
   }
 ]
