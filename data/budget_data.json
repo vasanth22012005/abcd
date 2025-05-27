@@ -929,5 +929,12 @@
     "subject": "Eb109",
     "debit": 37,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Miscellaneous",
+    "subject": "Eb 489",
+    "debit": 66,
+    "credit": 0
   }
 ]
