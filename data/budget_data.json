@@ -726,5 +726,12 @@
     "subject": "Velladurai",
     "debit": 50000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-09",
+    "category": "ESSAR",
+    "subject": "Rasi steels",
+    "debit": 15000,
+    "credit": 0
   }
 ]
