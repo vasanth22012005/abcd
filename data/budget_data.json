@@ -551,5 +551,12 @@
     "subject": "For vasanth",
     "debit": 0,
     "credit": 1000
+  },
+  {
+    "date": "2025-05-05",
+    "category": "Miscellaneous",
+    "subject": "Vasanth",
+    "debit": 1000,
+    "credit": 0
   }
 ]
