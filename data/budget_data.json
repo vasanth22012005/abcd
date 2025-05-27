@@ -1181,5 +1181,12 @@
     "subject": "For Anburose",
     "debit": 0,
     "credit": 200000
+  },
+  {
+    "date": "2025-05-23",
+    "category": "Miscellaneous",
+    "subject": "Expense",
+    "debit": 1300,
+    "credit": 0
   }
 ]
