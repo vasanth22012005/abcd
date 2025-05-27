@@ -691,5 +691,12 @@
     "subject": "Sudalaikasi",
     "debit": 0,
     "credit": 4000
+  },
+  {
+    "date": "2025-05-07",
+    "category": "Miscellaneous",
+    "subject": "Petrol",
+    "debit": 2000,
+    "credit": 0
   }
 ]
