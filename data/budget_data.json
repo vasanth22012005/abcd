@@ -936,5 +936,12 @@
     "subject": "Eb 489",
     "debit": 66,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "FDRL 5333",
+    "subject": "To 541",
+    "debit": 0,
+    "credit": 50000
   }
 ]
