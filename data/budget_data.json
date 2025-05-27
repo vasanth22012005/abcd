@@ -1041,5 +1041,12 @@
     "subject": "Velayutham.s",
     "debit": 0,
     "credit": 2000
+  },
+  {
+    "date": "2025-05-19",
+    "category": "Consumers",
+    "subject": "Velayutham.s+25",
+    "debit": 75000,
+    "credit": 0
   }
 ]
