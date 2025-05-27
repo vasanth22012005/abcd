@@ -1020,5 +1020,12 @@
     "subject": "Pandara.p",
     "debit": 0,
     "credit": 4000
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Rajammal",
+    "subject": "Pandara.p",
+    "debit": 4000,
+    "credit": 0
   }
 ]
