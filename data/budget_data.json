@@ -1132,5 +1132,12 @@
     "subject": "Muhil+1000",
     "debit": 5000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-22",
+    "category": "Intrest",
+    "subject": "Mari Ramajeyam",
+    "debit": 0,
+    "credit": 12000
   }
 ]
