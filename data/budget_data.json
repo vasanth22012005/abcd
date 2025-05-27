@@ -488,5 +488,12 @@
     "subject": "Surandai",
     "debit": 3000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-03",
+    "category": "Intrest",
+    "subject": "Maruthachamy(ba.30)",
+    "debit": 0,
+    "credit": 30000
   }
 ]
