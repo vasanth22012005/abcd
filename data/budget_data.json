@@ -1034,5 +1034,12 @@
     "subject": "Arumugachamy.sp",
     "debit": 0,
     "credit": 6000
+  },
+  {
+    "date": "2025-05-19",
+    "category": "Intrest",
+    "subject": "Velayutham.s",
+    "debit": 0,
+    "credit": 2000
   }
 ]
