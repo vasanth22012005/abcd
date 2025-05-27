@@ -733,5 +733,12 @@
     "subject": "Rasi steels",
     "debit": 15000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-09",
+    "category": "SR Private",
+    "subject": "For essar",
+    "debit": 0,
+    "credit": 200000
   }
 ]
