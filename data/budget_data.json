@@ -852,5 +852,12 @@
     "subject": "Cash",
     "debit": 200000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-15",
+    "category": "ESSAR",
+    "subject": "Koil",
+    "debit": 11000,
+    "credit": 0
   }
 ]
