@@ -985,5 +985,12 @@
     "subject": "Expense Tenkasi",
     "debit": 800,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Rent",
+    "subject": "Victor",
+    "debit": 0,
+    "credit": 2750
   }
 ]
