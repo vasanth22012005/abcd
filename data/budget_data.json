@@ -866,5 +866,12 @@
     "subject": "Gas",
     "debit": 68,
     "credit": 0
+  },
+  {
+    "date": "2025-05-14",
+    "category": "SR",
+    "subject": "Gas",
+    "debit": 0,
+    "credit": 68
   }
 ]
