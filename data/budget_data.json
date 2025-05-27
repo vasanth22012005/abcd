@@ -474,5 +474,12 @@
     "subject": "Jio",
     "debit": 900,
     "credit": 0
+  },
+  {
+    "date": "2025-05-02",
+    "category": "Agriculture",
+    "subject": "Kutty",
+    "debit": 600,
+    "credit": 0
   }
 ]
