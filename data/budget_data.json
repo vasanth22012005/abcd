@@ -831,5 +831,12 @@
     "subject": "Cash",
     "debit": 0,
     "credit": 200000
+  },
+  {
+    "date": "2025-05-14",
+    "category": "Intrest",
+    "subject": "Sudalai.int",
+    "debit": 0,
+    "credit": 2000
   }
 ]
