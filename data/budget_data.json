@@ -1153,5 +1153,12 @@
     "subject": "For red bus",
     "debit": 0,
     "credit": 1785
+  },
+  {
+    "date": "2025-05-22",
+    "category": "ESSAR",
+    "subject": "For Murugan.petrol",
+    "debit": 0,
+    "credit": 1000
   }
 ]
