@@ -950,5 +950,12 @@
     "subject": "From 5333",
     "debit": 50000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Miscellaneous",
+    "subject": "Surandai expense",
+    "debit": 2000,
+    "credit": 0
   }
 ]
