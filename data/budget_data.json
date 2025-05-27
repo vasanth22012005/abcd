@@ -1223,5 +1223,12 @@
     "subject": "Vasanth",
     "debit": 1000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-26",
+    "category": "Miscellaneous",
+    "subject": "Tin selavu",
+    "debit": 750,
+    "credit": 0
   }
 ]
