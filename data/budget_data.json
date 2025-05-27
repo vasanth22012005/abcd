@@ -747,5 +747,12 @@
     "subject": "Medical",
     "debit": 250,
     "credit": 0
+  },
+  {
+    "date": "2025-05-10",
+    "category": "Agriculture",
+    "subject": "Coconut vetta",
+    "debit": 1200,
+    "credit": 0
   }
 ]
