@@ -439,5 +439,12 @@
     "subject": "Uram marunthu",
     "debit": 1100,
     "credit": 0
+  },
+  {
+    "date": "2025-05-02",
+    "category": "Intrest",
+    "subject": "VMS",
+    "debit": 0,
+    "credit": 2000
   }
 ]
