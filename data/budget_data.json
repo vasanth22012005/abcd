@@ -887,5 +887,12 @@
     "subject": "For sun direct",
     "debit": 0,
     "credit": 1099
+  },
+  {
+    "date": "2025-05-15",
+    "category": "Miscellaneous",
+    "subject": "Sundirect",
+    "debit": 1099,
+    "credit": 0
   }
 ]
