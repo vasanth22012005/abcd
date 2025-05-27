@@ -1093,13 +1093,6 @@
   },
   {
     "date": "2025-05-21",
-    "category": "SR",
-    "subject": "Ability bus",
-    "debit": 0,
-    "credit": 613
-  },
-  {
-    "date": "2025-05-21",
     "category": "FDRL 5333",
     "subject": "Abibus",
     "debit": 613,
