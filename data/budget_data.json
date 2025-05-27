@@ -1107,13 +1107,6 @@
   },
   {
     "date": "2025-05-21",
-    "category": "Rent Advance",
-    "subject": "Veni",
-    "debit": 0,
-    "credit": 10000
-  },
-  {
-    "date": "2025-05-21",
     "category": "Miscellaneous",
     "subject": "Muhil+1000",
     "debit": 5000,
