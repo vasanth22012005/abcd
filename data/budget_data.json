@@ -1090,5 +1090,12 @@
     "subject": "For red bus",
     "debit": 1785,
     "credit": 0
+  },
+  {
+    "date": "2025-05-21",
+    "category": "SR",
+    "subject": "Ability bus",
+    "debit": 0,
+    "credit": 613
   }
 ]
