@@ -964,5 +964,12 @@
     "subject": "Cash",
     "debit": 0,
     "credit": 50000
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Intrest",
+    "subject": "For 50 int",
+    "debit": 0,
+    "credit": 500
   }
 ]
