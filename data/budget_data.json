@@ -572,5 +572,12 @@
     "subject": "Ability bus",
     "debit": 0,
     "credit": 613
+  },
+  {
+    "date": "2025-05-05",
+    "category": "Miscellaneous",
+    "subject": "Ability bus",
+    "debit": 613,
+    "credit": 0
   }
 ]
