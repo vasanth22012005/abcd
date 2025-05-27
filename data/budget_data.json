@@ -999,5 +999,12 @@
     "subject": "Victor",
     "debit": 2750,
     "credit": 0
+  },
+  {
+    "date": "2025-05-18",
+    "category": "Miscellaneous",
+    "subject": "Snkl,suresh",
+    "debit": 2000,
+    "credit": 0
   }
 ]
