@@ -978,5 +978,12 @@
     "subject": "Expense",
     "debit": 400,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Miscellaneous",
+    "subject": "Expense Tenkasi",
+    "debit": 800,
+    "credit": 0
   }
 ]
