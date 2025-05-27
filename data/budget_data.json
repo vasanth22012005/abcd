@@ -705,5 +705,12 @@
     "subject": "Chairmadurai",
     "debit": 0,
     "credit": 5000
+  },
+  {
+    "date": "2025-05-08",
+    "category": "FDRL 5333",
+    "subject": "For mdmk",
+    "debit": 0,
+    "credit": 2000
   }
 ]
