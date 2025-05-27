@@ -1111,5 +1111,12 @@
     "subject": "Abibus",
     "debit": 613,
     "credit": 0
+  },
+  {
+    "date": "2025-05-21",
+    "category": "Rent Advance",
+    "subject": "Veni",
+    "debit": 0,
+    "credit": 10000
   }
 ]
