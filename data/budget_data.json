@@ -838,5 +838,12 @@
     "subject": "Testing",
     "debit": 0,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "FDRL 541",
+    "subject": "Balance",
+    "debit": 41476,
+    "credit": 0
   }
 ]
