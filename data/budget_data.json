@@ -712,5 +712,12 @@
     "subject": "For mdmk",
     "debit": 0,
     "credit": 2000
+  },
+  {
+    "date": "2025-05-08",
+    "category": "Miscellaneous",
+    "subject": "Mdmk",
+    "debit": 2000,
+    "credit": 0
   }
 ]
