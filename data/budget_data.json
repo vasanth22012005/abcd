@@ -1188,5 +1188,12 @@
     "subject": "Expense",
     "debit": 1300,
     "credit": 0
+  },
+  {
+    "date": "2025-05-24",
+    "category": "Miscellaneous",
+    "subject": "Vaithiyer",
+    "debit": 500,
+    "credit": 0
   }
 ]
