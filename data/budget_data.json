@@ -1139,5 +1139,12 @@
     "subject": "Mari Ramajeyam",
     "debit": 0,
     "credit": 12000
+  },
+  {
+    "date": "2025-05-22",
+    "category": "Agriculture",
+    "subject": "Suraikkai",
+    "debit": 0,
+    "credit": 2100
   }
 ]
