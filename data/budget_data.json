@@ -530,5 +530,12 @@
     "subject": "Credit 25/4",
     "debit": 0,
     "credit": 50000
+  },
+  {
+    "date": "2025-05-03",
+    "category": "Arumugachamy",
+    "subject": "Cash",
+    "debit": 50000,
+    "credit": 0
   }
 ]
