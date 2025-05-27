@@ -754,5 +754,12 @@
     "subject": "Coconut vetta",
     "debit": 1200,
     "credit": 0
+  },
+  {
+    "date": "2025-05-10",
+    "category": "Miscellaneous",
+    "subject": "Expense",
+    "debit": 500,
+    "credit": 0
   }
 ]
