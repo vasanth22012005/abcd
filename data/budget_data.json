@@ -1076,5 +1076,12 @@
     "subject": "Marichelvam.s",
     "debit": 3000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-20",
+    "category": "Intrest",
+    "subject": "Manogar",
+    "debit": 0,
+    "credit": 20000
   }
 ]
