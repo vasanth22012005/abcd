@@ -579,5 +579,12 @@
     "subject": "Ability bus",
     "debit": 613,
     "credit": 0
+  },
+  {
+    "date": "2025-05-06",
+    "category": "Miscellaneous",
+    "subject": "Tenkasi selavu",
+    "debit": 500,
+    "credit": 0
   }
 ]
