@@ -698,5 +698,12 @@
     "subject": "Petrol",
     "debit": 2000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-07",
+    "category": "Intrest",
+    "subject": "Chairmadurai",
+    "debit": 0,
+    "credit": 5000
   }
 ]
