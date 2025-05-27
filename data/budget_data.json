@@ -1,6 +1,20 @@
 [
   {
     "date": "2025-05-01",
+    "category": "SR",
+    "subject": "Assets",
+    "debit": 0,
+    "credit": 14835146
+  },
+  {
+    "date": "2025-05-01",
+    "category": "KalaSaravanan",
+    "subject": "Credit",
+    "debit": 0,
+    "credit": 4005446
+  },
+  {
+    "date": "2025-05-01",
     "category": "Suresh SR",
     "subject": "Debit",
     "debit": 2460100,
@@ -710,7 +724,7 @@
     "date": "2025-05-09",
     "category": "ESSAR",
     "subject": "Rasi steels",
-    "debit": 15000,
+    "debit": 150000,
     "credit": 0
   },
   {
@@ -816,6 +830,13 @@
     "category": "Miscellaneous",
     "subject": "Expense",
     "debit": 250,
+    "credit": 0
+  },
+  {
+    "date": "2025-04-11",
+    "category": "Testing",
+    "subject": "Testing",
+    "debit": 0,
     "credit": 0
   }
 ]
