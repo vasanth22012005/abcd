@@ -670,5 +670,12 @@
     "subject": "Ananth",
     "debit": 150000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-07",
+    "category": "SR Private",
+    "subject": "For Ambika",
+    "debit": 0,
+    "credit": 5000
   }
 ]
