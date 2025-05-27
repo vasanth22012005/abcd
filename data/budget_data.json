@@ -1,13 +1,6 @@
 [
   {
     "date": "2025-05-01",
-    "category": "KalaSaravanan",
-    "subject": "Credit",
-    "debit": 0,
-    "credit": 4005446
-  },
-  {
-    "date": "2025-05-01",
     "category": "Suresh SR",
     "subject": "Debit",
     "debit": 2460100,
