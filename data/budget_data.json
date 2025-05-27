@@ -460,5 +460,12 @@
     "subject": "Mdmk skd",
     "debit": 1000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-02",
+    "category": "FDRL 5333",
+    "subject": "For jio",
+    "debit": 0,
+    "credit": 900
   }
 ]
