@@ -1174,5 +1174,12 @@
     "subject": "Anburose(sudalai)",
     "debit": 200000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-23",
+    "category": "SR Private",
+    "subject": "For Anburose",
+    "debit": 200000,
+    "credit": 0
   }
 ]
