@@ -789,5 +789,12 @@
     "subject": "K.Selvam",
     "debit": 0,
     "credit": 4000
+  },
+  {
+    "date": "2025-05-12",
+    "category": "Miscellaneous",
+    "subject": "Arisi",
+    "debit": 1100,
+    "credit": 0
   }
 ]
