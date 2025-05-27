@@ -1237,5 +1237,12 @@
     "subject": "Sudalaikasi.R",
     "debit": 0,
     "credit": 4000
+  },
+  {
+    "date": "2025-05-27",
+    "category": "Miscellaneous",
+    "subject": "Tin.selavu",
+    "debit": 550,
+    "credit": 0
   }
 ]
