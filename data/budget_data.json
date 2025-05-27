@@ -1027,5 +1027,12 @@
     "subject": "Pandara.p",
     "debit": 4000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-19",
+    "category": "Intrest",
+    "subject": "Arumugachamy.sp",
+    "debit": 0,
+    "credit": 6000
   }
 ]
