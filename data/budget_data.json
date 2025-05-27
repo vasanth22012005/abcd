@@ -649,5 +649,12 @@
     "subject": "Asir+Muthukumar",
     "debit": 10500,
     "credit": 0
+  },
+  {
+    "date": "2025-05-06",
+    "category": "SR Private",
+    "subject": "For Sudalaikasi",
+    "debit": 0,
+    "credit": 200000
   }
 ]
