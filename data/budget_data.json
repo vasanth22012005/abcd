@@ -817,12 +817,5 @@
     "subject": "Expense",
     "debit": 250,
     "credit": 0
-  },
-  {
-    "date": "2025-04-11",
-    "category": "Testing",
-    "subject": "Testing",
-    "debit": 0,
-    "credit": 0
   }
 ]
