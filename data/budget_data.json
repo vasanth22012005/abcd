@@ -677,5 +677,12 @@
     "subject": "For Ambika",
     "debit": 0,
     "credit": 50000
+  },
+  {
+    "date": "2025-05-07",
+    "category": "SR Private",
+    "subject": "For Sudalaikasi",
+    "debit": 0,
+    "credit": 200000
   }
 ]
