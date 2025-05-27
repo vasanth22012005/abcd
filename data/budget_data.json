@@ -593,5 +593,12 @@
     "subject": "T.Suresh",
     "debit": 0,
     "credit": 3100
+  },
+  {
+    "date": "2025-05-06",
+    "category": "Rajammal",
+    "subject": "Suresh.T.rent",
+    "debit": 3100,
+    "credit": 0
   }
 ]
