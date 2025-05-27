@@ -1006,5 +1006,12 @@
     "subject": "Milk",
     "debit": 1400,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Intrest",
+    "subject": "Pandara.P",
+    "debit": 0,
+    "credit": 4000
   }
 ]
