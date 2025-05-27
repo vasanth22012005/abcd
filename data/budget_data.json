@@ -817,5 +817,12 @@
     "subject": "Gas",
     "debit": 900,
     "credit": 0
+  },
+  {
+    "date": "2025-05-12",
+    "category": "Miscellaneous",
+    "subject": "Kutty",
+    "debit": 300,
+    "credit": 0
   }
 ]
