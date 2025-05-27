@@ -908,5 +908,12 @@
     "subject": "Eb",
     "debit": 0,
     "credit": 66
+  },
+  {
+    "date": "2025-05-17",
+    "category": "FDRL 5333",
+    "subject": "Eb",
+    "debit": 0,
+    "credit": 37
   }
 ]
