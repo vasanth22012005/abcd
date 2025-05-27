@@ -999,5 +999,12 @@
     "subject": "Snkl,suresh",
     "debit": 2000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-17",
+    "category": "Miscellaneous",
+    "subject": "Milk",
+    "debit": 1400,
+    "credit": 0
   }
 ]
