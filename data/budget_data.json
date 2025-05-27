@@ -1048,5 +1048,12 @@
     "subject": "Velayutham.s+25",
     "debit": 75000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-19",
+    "category": "Intrest",
+    "subject": "Vaithilingam",
+    "debit": 0,
+    "credit": 10000
   }
 ]
