@@ -775,5 +775,12 @@
     "subject": "Mariappan.R",
     "debit": 0,
     "credit": 5000
+  },
+  {
+    "date": "2025-05-11",
+    "category": "Rajammal",
+    "subject": "Mariappan int",
+    "debit": 5000,
+    "credit": 0
   }
 ]
