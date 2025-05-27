@@ -992,5 +992,12 @@
     "subject": "Victor",
     "debit": 0,
     "credit": 2750
+  },
+  {
+    "date": "2025-05-17",
+    "category": "TMB SR",
+    "subject": "Victor",
+    "debit": 2750,
+    "credit": 0
   }
 ]
