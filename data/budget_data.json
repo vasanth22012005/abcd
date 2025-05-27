@@ -656,5 +656,12 @@
     "subject": "For Sudalaikasi",
     "debit": 0,
     "credit": 200000
+  },
+  {
+    "date": "2025-05-06",
+    "category": "Sodalaikasi Private",
+    "subject": "Cash",
+    "debit": 200000,
+    "credit": 0
   }
 ]
