@@ -1209,5 +1209,12 @@
     "subject": "Rahul",
     "debit": 1000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-26",
+    "category": "Miscellaneous",
+    "subject": "Raja",
+    "debit": 1000,
+    "credit": 0
   }
 ]
