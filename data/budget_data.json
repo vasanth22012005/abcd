@@ -684,5 +684,12 @@
     "subject": "Ambika",
     "debit": 100000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-07",
+    "category": "Intrest",
+    "subject": "Sudalaikasi",
+    "debit": 0,
+    "credit": 4000
   }
 ]
