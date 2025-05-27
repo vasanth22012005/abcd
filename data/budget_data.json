@@ -628,5 +628,12 @@
     "subject": "Milk",
     "debit": 1200,
     "credit": 0
+  },
+  {
+    "date": "2025-05-06",
+    "category": "Rent",
+    "subject": "Asirvath",
+    "debit": 0,
+    "credit": 7000
   }
 ]
