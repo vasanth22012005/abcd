@@ -432,5 +432,12 @@
     "subject": "Airtel",
     "debit": 274,
     "credit": 0
+  },
+  {
+    "date": "2025-05-02",
+    "category": "Agriculture",
+    "subject": "Uram marunthu",
+    "debit": 1100,
+    "credit": 0
   }
 ]
