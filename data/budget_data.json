@@ -768,5 +768,12 @@
     "subject": "Mariappan.R",
     "debit": 0,
     "credit": 5000
+  },
+  {
+    "date": "2025-05-11",
+    "category": "Intrest",
+    "subject": "Mariappan.R",
+    "debit": 0,
+    "credit": 5000
   }
 ]
