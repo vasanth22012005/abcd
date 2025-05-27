@@ -565,5 +565,12 @@
     "subject": "Antrews.M",
     "debit": 0,
     "credit": 4000
+  },
+  {
+    "date": "2025-05-05",
+    "category": "FDRL 5333",
+    "subject": "Ability bus",
+    "debit": 0,
+    "credit": 613
   }
 ]
