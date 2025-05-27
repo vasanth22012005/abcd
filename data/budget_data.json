@@ -1055,5 +1055,12 @@
     "subject": "Vaithilingam",
     "debit": 0,
     "credit": 10000
+  },
+  {
+    "date": "2025-05-19",
+    "category": "FDRL 5333",
+    "subject": "Sudalaikai",
+    "debit": 1500,
+    "credit": 0
   }
 ]
