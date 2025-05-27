@@ -586,5 +586,12 @@
     "subject": "Tenkasi selavu",
     "debit": 500,
     "credit": 0
+  },
+  {
+    "date": "2025-05-06",
+    "category": "Rent",
+    "subject": "T.Suresh",
+    "debit": 0,
+    "credit": 3100
   }
 ]
