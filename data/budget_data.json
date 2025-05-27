@@ -481,5 +481,12 @@
     "subject": "Kutty",
     "debit": 600,
     "credit": 0
+  },
+  {
+    "date": "2025-05-03",
+    "category": "Miscellaneous",
+    "subject": "Surandai",
+    "debit": 3000,
+    "credit": 0
   }
 ]
