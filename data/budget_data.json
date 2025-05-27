@@ -537,5 +537,12 @@
     "subject": "Cash",
     "debit": 50000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-04",
+    "category": "Miscellaneous",
+    "subject": "Selavu 200+250",
+    "debit": 450,
+    "credit": 0
   }
 ]
