@@ -859,5 +859,12 @@
     "subject": "Koil",
     "debit": 11000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-14",
+    "category": "FDRL 541",
+    "subject": "Gas",
+    "debit": 68,
+    "credit": 0
   }
 ]
