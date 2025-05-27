@@ -467,5 +467,12 @@
     "subject": "For jio",
     "debit": 0,
     "credit": 900
+  },
+  {
+    "date": "2025-05-02",
+    "category": "Miscellaneous",
+    "subject": "Jio",
+    "debit": 900,
+    "credit": 0
   }
 ]
