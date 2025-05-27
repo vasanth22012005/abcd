@@ -621,5 +621,12 @@
     "subject": "Red bus Rahul",
     "debit": 630,
     "credit": 0
+  },
+  {
+    "date": "2025-05-06",
+    "category": "Miscellaneous",
+    "subject": "Milk",
+    "debit": 1200,
+    "credit": 0
   }
 ]
