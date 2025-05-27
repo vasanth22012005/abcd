@@ -369,5 +369,12 @@
     "subject": "Lingam M",
     "debit": 0,
     "credit": 1600
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Rent",
+    "subject": "Veni",
+    "debit": 0,
+    "credit": 2500
   }
 ]
