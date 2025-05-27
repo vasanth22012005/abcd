@@ -845,5 +845,12 @@
     "subject": "Balance",
     "debit": 41476,
     "credit": 0
+  },
+  {
+    "date": "2025-05-14",
+    "category": "SR Private",
+    "subject": "Cash",
+    "debit": 200000,
+    "credit": 0
   }
 ]
