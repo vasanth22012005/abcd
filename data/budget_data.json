@@ -642,5 +642,12 @@
     "subject": "Muthukumar.R",
     "debit": 0,
     "credit": 3500
+  },
+  {
+    "date": "2025-05-06",
+    "category": "Rajammal",
+    "subject": "Asir+Muthukumar",
+    "debit": 10500,
+    "credit": 0
   }
 ]
