@@ -509,5 +509,12 @@
     "subject": "For essar",
     "debit": 0,
     "credit": 100000
+  },
+  {
+    "date": "2025-05-03",
+    "category": "ESSAR",
+    "subject": "For kadappa",
+    "debit": 275000,
+    "credit": 0
   }
 ]
