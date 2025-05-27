@@ -425,5 +425,12 @@
     "subject": "For cell",
     "debit": 0,
     "credit": 274
+  },
+  {
+    "date": "2025-05-02",
+    "category": "Miscellaneous",
+    "subject": "Airtel",
+    "debit": 274,
+    "credit": 0
   }
 ]
