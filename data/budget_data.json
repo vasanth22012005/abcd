@@ -719,5 +719,12 @@
     "subject": "Mdmk",
     "debit": 2000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-08",
+    "category": "ESSAR",
+    "subject": "Velladurai",
+    "debit": 50000,
+    "credit": 0
   }
 ]
