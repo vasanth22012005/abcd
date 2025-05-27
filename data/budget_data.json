@@ -663,5 +663,12 @@
     "subject": "Cash",
     "debit": 200000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-07",
+    "category": "Consumers",
+    "subject": "Ananth",
+    "debit": 150000,
+    "credit": 0
   }
 ]
