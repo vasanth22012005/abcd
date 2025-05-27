@@ -1146,5 +1146,12 @@
     "subject": "Suraikkai",
     "debit": 0,
     "credit": 2100
+  },
+  {
+    "date": "2025-05-22",
+    "category": "FDRL 5333",
+    "subject": "Ramajeyam",
+    "debit": 12000,
+    "credit": 0
   }
 ]
