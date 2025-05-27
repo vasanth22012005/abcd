@@ -523,5 +523,12 @@
     "subject": "For essar",
     "debit": 0,
     "credit": 35000
+  },
+  {
+    "date": "2025-05-03",
+    "category": "ESSAR",
+    "subject": "Credit 25/4",
+    "debit": 0,
+    "credit": 50000
   }
 ]
