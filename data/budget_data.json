@@ -404,5 +404,12 @@
     "subject": "Vasanthy rent",
     "debit": 2750,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Miscellaneous",
+    "subject": "Zerox",
+    "debit": 2800,
+    "credit": 0
   }
 ]
