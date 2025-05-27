@@ -397,5 +397,12 @@
     "subject": "Vasanthy",
     "debit": 0,
     "credit": 1000
+  },
+  {
+    "date": "2025-05-01",
+    "category": "FDRL 5333",
+    "subject": "Vasanthy rent",
+    "debit": 2750,
+    "credit": 0
   }
 ]
