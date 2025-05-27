@@ -446,5 +446,12 @@
     "subject": "VMS",
     "debit": 0,
     "credit": 2000
+  },
+  {
+    "date": "2025-05-02",
+    "category": "FDRL 5333",
+    "subject": "For mdmk",
+    "debit": 0,
+    "credit": 1000
   }
 ]
