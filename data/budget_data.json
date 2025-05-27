@@ -740,5 +740,12 @@
     "subject": "For essar",
     "debit": 0,
     "credit": 200000
+  },
+  {
+    "date": "2025-05-09",
+    "category": "Miscellaneous",
+    "subject": "Medical",
+    "debit": 250,
+    "credit": 0
   }
 ]
