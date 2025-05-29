@@ -1422,5 +1422,13 @@
     "debit": 300,
     "credit": 0,
     "timestamp": "2025-05-29T10:46:30.318Z"
+  },
+  {
+    "date": "2025-05-29",
+    "category": "Miscellaneous",
+    "subject": "Goid",
+    "debit": 500000,
+    "credit": 0,
+    "timestamp": "2025-05-29T11:03:48.528Z"
   }
 ]
