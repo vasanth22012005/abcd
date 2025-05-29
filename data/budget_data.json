@@ -1244,5 +1244,12 @@
     "subject": "Tin.selavu",
     "debit": 550,
     "credit": 0
+  },
+  {
+    "date": "2025-05-29",
+    "category": "Miscellaneous",
+    "subject": "Petrol+",
+    "debit": 300,
+    "credit": 0
   }
 ]
