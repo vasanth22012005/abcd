@@ -1414,13 +1414,5 @@
     "debit": 550,
     "credit": 0,
     "timestamp": "2025-05-29T10:45:30.318Z"
-  },
-  {
-    "date": "2025-05-29",
-    "category": "Agriculture",
-    "subject": "Nelli",
-    "debit": 0,
-    "credit": 20000,
-    "timestamp": "2025-05-29T11:57:34.247Z"
   }
 ]
