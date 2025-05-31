@@ -330,14 +330,6 @@
   {
     "date": "2025-05-01",
     "category": "Consumers",
-    "subject": "VelayuthamS",
-    "debit": 25000,
-    "credit": 0,
-    "timestamp": "2025-05-29T08:29:30.318Z"
-  },
-  {
-    "date": "2025-05-01",
-    "category": "Consumers",
     "subject": "Sounthar",
     "debit": 0,
     "credit": 5550,
