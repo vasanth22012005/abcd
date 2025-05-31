@@ -1427,8 +1427,8 @@
     "date": "2025-05-31",
     "category": "test",
     "subject": "Test",
-    "debit": 0,
-    "credit": 2,
-    "timestamp": "2025-05-31T08:05:04.888Z"
+    "debit": 10,
+    "credit": 0,
+    "timestamp": "2025-05-31T08:08:21.393Z"
   }
 ]
