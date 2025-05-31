@@ -1509,5 +1509,12 @@
     "subject": "Sudalaikasi",
     "debit": 0,
     "credit": 5500
+  },
+  {
+    "date": "2025-05-31",
+    "category": "Intrest",
+    "subject": "Sudalaikasi",
+    "debit": 0,
+    "credit": 63000
   }
 ]
