@@ -1405,5 +1405,12 @@
     "subject": "Kala selavu",
     "debit": 600,
     "credit": 0
+  },
+  {
+    "date": "2025-05-30",
+    "category": "Miscellaneous",
+    "subject": "Muhil+",
+    "debit": 1500,
+    "credit": 0
   }
 ]
