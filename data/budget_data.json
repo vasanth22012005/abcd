@@ -1426,5 +1426,12 @@
     "subject": "Petrol",
     "debit": 300,
     "credit": 0
+  },
+  {
+    "date": "2025-05-30",
+    "category": "SR Private",
+    "subject": "For SK(Mutton)",
+    "debit": 0,
+    "credit": 200000
   }
 ]
