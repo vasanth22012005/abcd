@@ -1449,13 +1449,6 @@
   },
   {
     "date": "2025-05-31",
-    "category": "SR Private",
-    "subject": "Adjustment",
-    "debit": 200000,
-    "credit": 0
-  },
-  {
-    "date": "2025-05-31",
     "category": "Sodalaikasi Private",
     "subject": "Adjestment",
     "debit": 0,
