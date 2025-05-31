@@ -1398,13 +1398,5 @@
     "debit": 0,
     "credit": 4000,
     "timestamp": "2025-05-29T10:44:30.318Z"
-  },
-  {
-    "date": "2025-05-27",
-    "category": "Miscellaneous",
-    "subject": "Tin.selavu",
-    "debit": 550,
-    "credit": 0,
-    "timestamp": "2025-05-29T10:45:30.318Z"
   }
 ]
