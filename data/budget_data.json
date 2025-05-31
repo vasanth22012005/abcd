@@ -753,14 +753,6 @@
   },
   {
     "date": "2025-05-07",
-    "category": "SR Private",
-    "subject": "For Sudalaikasi",
-    "debit": 0,
-    "credit": 200000,
-    "timestamp": "2025-05-29T09:23:30.318Z"
-  },
-  {
-    "date": "2025-05-07",
     "category": "Consumers",
     "subject": "Ambika",
     "debit": 100000,
