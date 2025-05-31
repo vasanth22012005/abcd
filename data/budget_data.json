@@ -1398,5 +1398,12 @@
     "debit": 0,
     "credit": 4000,
     "timestamp": "2025-05-29T10:44:30.318Z"
+  },
+  {
+    "date": "2025-05-29",
+    "category": "Miscellaneous",
+    "subject": "Kala selavu",
+    "debit": 0,
+    "credit": 0
   }
 ]
