@@ -1433,21 +1433,34 @@
         return;
       }
       
+      // First, calculate running balances for all entries in chronological order
+      const entriesWithBalance = [];
       let balance = 0;
       
       data.forEach((entry, index) => {
         balance += entry.credit - entry.debit;
-        
+        entriesWithBalance.push({
+          ...entry,
+          balance: balance,
+          originalIndex: index
+        });
+      });
+      
+      // Now reverse the array to show newest entries first
+      const reversedEntries = [...entriesWithBalance].reverse();
+      
+      // Render the table with newest entries first
+      reversedEntries.forEach((entry) => {
         const row = `<tr>
           <td>${formatDate(entry.date)}</td>
           <td><span class="category-badge" onclick="filterByCategory('${entry.category}')">${entry.category}</span></td>
           <td>${entry.subject || ""}</td>
           <td class="amount debit">${entry.debit > 0 ? '₹' + entry.debit.toFixed(2) : '-'}</td>
           <td class="amount credit">${entry.credit > 0 ? '₹' + entry.credit.toFixed(2) : '-'}</td>
-          <td class="amount ${balance >= 0 ? 'credit' : 'debit'}">₹${balance.toFixed(2)}</td>
+          <td class="amount ${entry.balance >= 0 ? 'credit' : 'debit'}">₹${entry.balance.toFixed(2)}</td>
           <td>
-            <button class="action-btn edit-btn" onclick="openEditModal(${index})"><i class="fas fa-edit"></i></button>
-            <button class="action-btn delete-btn" onclick="deleteEntry(${index})"><i class="fas fa-trash"></i></button>
+            <button class="action-btn edit-btn" onclick="openEditModal(${entry.originalIndex})"><i class="fas fa-edit"></i></button>
+            <button class="action-btn delete-btn" onclick="deleteEntry(${entry.originalIndex})"><i class="fas fa-trash"></i></button>
           </td>
         </tr>`;
         
