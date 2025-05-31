@@ -1447,5 +1447,12 @@
     "subject": "Rahul redbus",
     "debit": 0,
     "credit": 1260
+  },
+  {
+    "date": "2025-05-30",
+    "category": "Miscellaneous",
+    "subject": "Rahul red bus",
+    "debit": 1260,
+    "credit": 0
   }
 ]
