@@ -1414,13 +1414,5 @@
     "debit": 550,
     "credit": 0,
     "timestamp": "2025-05-29T10:45:30.318Z"
-  },
-  {
-    "date": "2025-05-29",
-    "category": "Miscellaneous",
-    "subject": "Petrol+",
-    "debit": 300,
-    "credit": 0,
-    "timestamp": "2025-05-29T15:48:36.188Z"
   }
 ]
