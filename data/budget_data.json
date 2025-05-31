@@ -1502,5 +1502,12 @@
     "subject": "Vasanthi",
     "debit": 275,
     "credit": 0
+  },
+  {
+    "date": "2025-05-31",
+    "category": "Rent",
+    "subject": "Sudalaikasi",
+    "debit": 0,
+    "credit": 5500
   }
 ]
