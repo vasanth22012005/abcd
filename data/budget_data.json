@@ -1488,5 +1488,12 @@
     "subject": "Eb 487",
     "debit": 273,
     "credit": 0
+  },
+  {
+    "date": "2025-05-31",
+    "category": "SR",
+    "subject": "Vasanthi",
+    "debit": 0,
+    "credit": 275
   }
 ]
