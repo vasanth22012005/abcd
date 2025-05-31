@@ -1474,5 +1474,12 @@
     "subject": "For eb 487",
     "debit": 0,
     "credit": 273
+  },
+  {
+    "date": "2025-05-31",
+    "category": "Miscellaneous",
+    "subject": "Eb 486",
+    "debit": 486,
+    "credit": 0
   }
 ]
