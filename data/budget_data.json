@@ -1422,5 +1422,13 @@
     "debit": 300,
     "credit": 0,
     "timestamp": "2025-05-29T15:48:36.188Z"
+  },
+  {
+    "date": "2025-05-31",
+    "category": "test",
+    "subject": "Test",
+    "debit": 0,
+    "credit": 1,
+    "timestamp": "2025-05-31T08:04:26.827Z"
   }
 ]
