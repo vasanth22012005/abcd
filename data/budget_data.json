@@ -1433,5 +1433,12 @@
     "subject": "For SK(Mutton)",
     "debit": 0,
     "credit": 200000
+  },
+  {
+    "date": "2025-05-30",
+    "category": "Sodalaikasi Private",
+    "subject": "For mutton 7days",
+    "debit": 200000,
+    "credit": 0
   }
 ]
