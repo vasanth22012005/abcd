@@ -1468,5 +1468,12 @@
     "subject": "Adjestment",
     "debit": 0,
     "credit": 200000
+  },
+  {
+    "date": "2025-05-31",
+    "category": "Miscellaneous",
+    "subject": "Inverter battery",
+    "debit": 12000,
+    "credit": 0
   }
 ]
