@@ -548,13 +548,6 @@
       -webkit-appearance: none;
       padding-right: 15px;
     }
-    
-    /* Timestamp column styles */
-    td small {
-      font-size: 12px;
-      color: var(--light-text);
-      white-space: nowrap;
-    }
   </style>
 </head>
 <body>
@@ -722,7 +715,6 @@
             <th>Debit</th>
             <th>Credit</th>
             <th>Balance</th>
-            <th>Added/Edited</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -1030,36 +1022,8 @@
       const savedEntries = localStorage.getItem('budgetEntries');
       if (savedEntries) {
         entries = JSON.parse(savedEntries);
-        
-        // Add timestamps to existing entries if they don't have them
-        addTimestampsToExistingEntries();
-        
         renderTable(entries);
         updateSummary();
-      }
-    }
-    
-    // Add timestamps to existing entries that don't have them
-    function addTimestampsToExistingEntries() {
-      let needsUpdate = false;
-      
-      // Generate timestamps for entries that don't have them
-      // We'll use the current time but space them out slightly
-      // to maintain some order even for older entries
-      entries.forEach((entry, index) => {
-        if (!entry.timestamp) {
-          // Create a timestamp slightly in the past based on the index
-          // This ensures older entries appear in the same order they were originally in
-          const timestamp = new Date();
-          timestamp.setMinutes(timestamp.getMinutes() - (entries.length - index));
-          entry.timestamp = timestamp.toISOString();
-          needsUpdate = true;
-        }
-      });
-      
-      // Save the updated entries if any changes were made
-      if (needsUpdate) {
-        saveToLocalStorage();
       }
     }
     
@@ -1076,8 +1040,6 @@
             if (dataResponse.ok) {
               const data = await dataResponse.json();
               entries = data;
-              // Add timestamps to entries loaded from GitHub
-              addTimestampsToExistingEntries();
             }
             
             // Try to load categories
@@ -1112,8 +1074,6 @@
               const fileData = await response.json();
               const content = atob(fileData.content); // Decode base64
               entries = JSON.parse(content);
-              // Add timestamps to entries loaded from GitHub
-              addTimestampsToExistingEntries();
             }
             
             // Load categories
@@ -1372,14 +1332,13 @@
       const subject = document.getElementById("subject").value.trim();
       const debit = parseFloat(document.getElementById("debit").value) || 0;
       const credit = parseFloat(document.getElementById("credit").value) || 0;
-      const timestamp = new Date().toISOString(); // Add timestamp for when entry was created
     
       if (!date || !category) {
         showNotification("Please enter date and category.", "error");
         return;
       }
       
-      entries.push({ date, category, subject, debit, credit, timestamp });
+      entries.push({ date, category, subject, debit, credit });
       await saveData();
       renderTable(entries);
       updateSummary();
@@ -1438,7 +1397,6 @@
       const newSubject = document.getElementById("editSubject").value.trim();
       let newDebit = parseFloat(document.getElementById("editDebit").value);
       let newCredit = parseFloat(document.getElementById("editCredit").value);
-      const timestamp = new Date().toISOString(); // Update timestamp when entry is edited
       
       if (!newDate || !newCategory) {
         showNotification("Please enter date and category.", "error");
@@ -1453,8 +1411,7 @@
         category: newCategory,
         subject: newSubject,
         debit: newDebit,
-        credit: newCredit,
-        timestamp: timestamp // Use the new timestamp to indicate it was edited
+        credit: newCredit
       };
       
       await saveData();
@@ -1472,42 +1429,14 @@
       tbody.innerHTML = "";
       
       if (data.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 20px;">No entries found</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px;">No entries found</td></tr>`;
         return;
       }
       
-      // Sort data by timestamp (newest first)
-      // Create a copy of the data array to avoid modifying the original
-      const sortedData = [...data].sort((a, b) => {
-        // If timestamp doesn't exist for older entries, use current time
-        const timestampA = a.timestamp || new Date().toISOString();
-        const timestampB = b.timestamp || new Date().toISOString();
-        return new Date(timestampB) - new Date(timestampA); // Newest first
-      });
-      
       let balance = 0;
       
-      sortedData.forEach((entry, index) => {
-        // Find the original index in the entries array
-        const originalIndex = entries.findIndex(e => 
-          e.date === entry.date && 
-          e.category === entry.category && 
-          e.subject === entry.subject && 
-          e.debit === entry.debit && 
-          e.credit === entry.credit
-        );
-        
+      data.forEach((entry, index) => {
         balance += entry.credit - entry.debit;
-        
-        // Format timestamp for display
-        const timestampDisplay = entry.timestamp ? 
-          new Date(entry.timestamp).toLocaleString('en-IN', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-          }) : 'N/A';
         
         const row = `<tr>
           <td>${formatDate(entry.date)}</td>
@@ -1516,10 +1445,9 @@
           <td class="amount debit">${entry.debit > 0 ? '₹' + entry.debit.toFixed(2) : '-'}</td>
           <td class="amount credit">${entry.credit > 0 ? '₹' + entry.credit.toFixed(2) : '-'}</td>
           <td class="amount ${balance >= 0 ? 'credit' : 'debit'}">₹${balance.toFixed(2)}</td>
-          <td><small>${timestampDisplay}</small></td>
           <td>
-            <button class="action-btn edit-btn" onclick="openEditModal(${originalIndex})"><i class="fas fa-edit"></i></button>
-            <button class="action-btn delete-btn" onclick="deleteEntry(${originalIndex})"><i class="fas fa-trash"></i></button>
+            <button class="action-btn edit-btn" onclick="openEditModal(${index})"><i class="fas fa-edit"></i></button>
+            <button class="action-btn delete-btn" onclick="deleteEntry(${index})"><i class="fas fa-trash"></i></button>
           </td>
         </tr>`;
         
