@@ -1447,5 +1447,12 @@
     "subject": "Rahul red bus",
     "debit": 1260,
     "credit": 0
+  },
+  {
+    "date": "2025-05-01",
+    "category": "Consumers",
+    "subject": "Velayutham.sv",
+    "debit": 25000,
+    "credit": 0
   }
 ]
