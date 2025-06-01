@@ -1159,14 +1159,6 @@
     "timestamp": "2025-05-29T10:21:30.318Z"
   },
   {
-    "date": "2025-05-20",
-    "category": "FDRL 5333",
-    "subject": "For red bus",
-    "debit": 1785,
-    "credit": 0,
-    "timestamp": "2025-05-29T10:22:30.318Z"
-  },
-  {
     "date": "2025-05-21",
     "category": "SR",
     "subject": "Ability bus",
