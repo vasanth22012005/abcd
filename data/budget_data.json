@@ -153,14 +153,6 @@
   },
   {
     "date": "2025-05-01",
-    "category": "Miscellaneous",
-    "subject": "Totel",
-    "debit": 249066,
-    "credit": 0,
-    "timestamp": "2025-05-29T08:07:30.318Z"
-  },
-  {
-    "date": "2025-05-01",
     "category": "KVB SRS",
     "subject": "Balance",
     "debit": 335000,
