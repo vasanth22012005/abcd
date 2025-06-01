@@ -1,14 +1,6 @@
 [
   {
     "date": "2025-05-01",
-    "category": "SR",
-    "subject": "Assets",
-    "debit": 0,
-    "credit": 14835146,
-    "timestamp": "2025-05-29T07:48:30.318Z"
-  },
-  {
-    "date": "2025-05-01",
     "category": "KalaSaravanan",
     "subject": "Credit",
     "debit": 0,
