@@ -1533,5 +1533,12 @@
     "subject": "Sampalam",
     "debit": 1000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-31",
+    "category": "Agriculture",
+    "subject": "Sampalam",
+    "debit": 1000,
+    "credit": 0
   }
 ]
