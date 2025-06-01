@@ -1513,5 +1513,12 @@
     "subject": "3/7 entry",
     "debit": 50000,
     "credit": 0
+  },
+  {
+    "date": "2025-05-31",
+    "category": "Rent",
+    "subject": "Vasanthi",
+    "debit": 0,
+    "credit": 2750
   }
 ]
