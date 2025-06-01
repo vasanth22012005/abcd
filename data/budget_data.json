@@ -392,14 +392,6 @@
   },
   {
     "date": "2025-05-01",
-    "category": "FDRL 5333",
-    "subject": "Vasanthy rent",
-    "debit": 2750,
-    "credit": 0,
-    "timestamp": "2025-05-29T08:44:30.318Z"
-  },
-  {
-    "date": "2025-05-01",
     "category": "Miscellaneous",
     "subject": "Zerox",
     "debit": 280,
