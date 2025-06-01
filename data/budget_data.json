@@ -57,14 +57,6 @@
   },
   {
     "date": "2025-05-01",
-    "category": "Rent advance",
-    "subject": "Muthukumar R",
-    "debit": 0,
-    "credit": 100000,
-    "timestamp": "2025-05-29T07:57:30.318Z"
-  },
-  {
-    "date": "2025-05-01",
     "category": "Sivan.T",
     "subject": "Debit",
     "debit": 72875,
