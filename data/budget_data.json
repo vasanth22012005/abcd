@@ -57,14 +57,6 @@
   },
   {
     "date": "2025-05-01",
-    "category": "Arumugachamy SP",
-    "subject": "Debit",
-    "debit": 300000,
-    "credit": 0,
-    "timestamp": "2025-05-29T07:55:30.318Z"
-  },
-  {
-    "date": "2025-05-01",
     "category": "Rent advance",
     "subject": "Asirvath",
     "debit": 0,
