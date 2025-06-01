@@ -1536,5 +1536,12 @@
     "subject": "Kutty",
     "debit": 300,
     "credit": 0
+  },
+  {
+    "date": "2025-06-01",
+    "category": "SR",
+    "subject": "Train",
+    "debit": 1100,
+    "credit": 0
   }
 ]
