@@ -1523,5 +1523,12 @@
     "subject": "Totel",
     "debit": 0,
     "credit": 240000
+  },
+  {
+    "date": "2025-06-01",
+    "category": "Arumugachamy SP",
+    "subject": "Totel",
+    "debit": 300000,
+    "credit": 0
   }
 ]
