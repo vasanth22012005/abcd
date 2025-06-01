@@ -1519,5 +1519,12 @@
     "subject": "Vasanthi rent",
     "debit": 2750,
     "credit": 0
+  },
+  {
+    "date": "2025-06-01",
+    "category": "Miscellaneous",
+    "subject": "Redbus wrong entry",
+    "debit": 1785,
+    "credit": 0
   }
 ]
