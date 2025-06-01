@@ -1549,5 +1549,12 @@
     "subject": "Train",
     "debit": 0,
     "credit": 1100
+  },
+  {
+    "date": "2025-06-01",
+    "category": "Miscellaneous",
+    "subject": "Train 31/5",
+    "debit": 1100,
+    "credit": 0
   }
 ]
