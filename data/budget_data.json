@@ -1529,5 +1529,12 @@
     "subject": "Asirvath+Muthukumar",
     "debit": 0,
     "credit": 200000
+  },
+  {
+    "date": "2025-06-01",
+    "category": "Agriculture",
+    "subject": "Kutty",
+    "debit": 300,
+    "credit": 0
   }
 ]
