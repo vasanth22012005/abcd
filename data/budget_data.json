@@ -1524,5 +1524,12 @@
     "subject": "Total",
     "debit": 249066,
     "credit": 0
+  },
+  {
+    "date": "2025-06-01",
+    "category": "Rent Advance",
+    "subject": "Totel",
+    "debit": 0,
+    "credit": 240000
   }
 ]
