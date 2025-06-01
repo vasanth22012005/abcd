@@ -1522,5 +1522,12 @@
     "subject": "Totel",
     "debit": 300000,
     "credit": 0
+  },
+  {
+    "date": "2025-06-01",
+    "category": "SR",
+    "subject": "1/5 zzTotel",
+    "debit": 0,
+    "credit": 14835146
   }
 ]
