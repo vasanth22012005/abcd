@@ -1522,5 +1522,12 @@
     "subject": "1/5 zzTotel",
     "debit": 0,
     "credit": 14835146
+  },
+  {
+    "date": "2025-06-01",
+    "category": "Rent advance",
+    "subject": "Asirvath+Muthukumar",
+    "debit": 0,
+    "credit": 200000
   }
 ]
