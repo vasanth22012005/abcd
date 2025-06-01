@@ -1506,5 +1506,12 @@
     "subject": "Veni 21/5 missed",
     "debit": 0,
     "credit": 10000
+  },
+  {
+    "date": "2025-06-01",
+    "category": "Arumugachamy SP",
+    "subject": "3/7 entry",
+    "debit": 50000,
+    "credit": 0
   }
 ]
