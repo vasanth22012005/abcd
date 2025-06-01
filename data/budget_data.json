@@ -1512,7 +1512,7 @@
     "date": "2025-06-01",
     "category": "Rent advance",
     "subject": "Veni 21/5 missed",
-    "debit": 10000,
-    "credit": 0
+    "debit": 0,
+    "credit": 10000
   }
 ]
