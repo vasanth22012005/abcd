@@ -1533,5 +1533,12 @@
     "subject": "Train 31/5",
     "debit": 1100,
     "credit": 0
+  },
+  {
+    "date": "2025-06-01",
+    "category": "FDRL 5333",
+    "subject": "For train",
+    "debit": 0,
+    "credit": 1100
   }
 ]
