@@ -1540,12 +1540,5 @@
     "subject": "For train",
     "debit": 0,
     "credit": 1100
-  },
-  {
-    "date": "2025-07-20",
-    "category": "Agriculture",
-    "subject": "New",
-    "debit": 0,
-    "credit": 15000
   }
 ]
