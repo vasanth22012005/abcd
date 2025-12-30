@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "date": "2025-12-31",
+    "category": "SR Private",
+    "subject": "a",
+    "debit": 0,
+    "credit": 213
+  }
+]
