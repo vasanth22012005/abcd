@@ -5,5 +5,12 @@
     "subject": "dfw",
     "debit": 2112312,
     "credit": 13130
+  },
+  {
+    "date": "2025-12-18",
+    "category": "Sodalaikasi Private",
+    "subject": "1212",
+    "debit": 13213,
+    "credit": 33131311111
   }
 ]
