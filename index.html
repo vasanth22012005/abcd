@@ -787,9 +787,11 @@
     // GitHub configuration
     const GITHUB_USERNAME = "vasanth22012005";
     const GITHUB_REPO = "expense-tracker";
-    const DATA_FILE_PATH = "data/budget_data.json";
     const USERS_FILE_PATH = "data/users.json";
-    const CATEGORIES_FILE_PATH = "data/categories.json";
+    
+    // User-specific file paths - will be set dynamically based on logged-in user
+    let DATA_FILE_PATH = "";
+    let CATEGORIES_FILE_PATH = "";
     
     let entries = [];
     let currentEditIndex = -1;
@@ -810,6 +812,15 @@
       "KVB SRS"
     ];
     
+    // Initialize user-specific file paths
+    function initializeUserPaths() {
+      const currentUser = localStorage.getItem('currentUser');
+      if (currentUser) {
+        DATA_FILE_PATH = `data/users/${currentUser}/budget_data.json`;
+        CATEGORIES_FILE_PATH = `data/users/${currentUser}/categories.json`;
+      }
+    }
+    
     // Check if user is logged in
     document.addEventListener('DOMContentLoaded', function() {
       const currentUser = localStorage.getItem('currentUser');
@@ -817,6 +828,9 @@
         window.location.href = 'login.html';
         return;
       }
+      
+      // Initialize user-specific paths
+      initializeUserPaths();
       
       // Set user info
       document.getElementById('username').textContent = currentUser;
@@ -848,7 +862,8 @@
     
     // Load categories from localStorage
     function loadCategoriesFromLocalStorage() {
-      const savedCategories = localStorage.getItem('budgetCategories');
+      const currentUser = localStorage.getItem('currentUser');
+      const savedCategories = localStorage.getItem(`budgetCategories_${currentUser}`);
       if (savedCategories) {
         categories = JSON.parse(savedCategories);
       }
@@ -856,7 +871,8 @@
     
     // Save categories to localStorage
     function saveCategoriesToLocalStorage() {
-      localStorage.setItem('budgetCategories', JSON.stringify(categories));
+      const currentUser = localStorage.getItem('currentUser');
+      localStorage.setItem(`budgetCategories_${currentUser}`, JSON.stringify(categories));
     }
     
     // Update all category dropdowns with current categories
@@ -1014,12 +1030,14 @@
     
     // Save data to localStorage as a backup
     function saveToLocalStorage() {
-      localStorage.setItem('budgetEntries', JSON.stringify(entries));
+      const currentUser = localStorage.getItem('currentUser');
+      localStorage.setItem(`budgetEntries_${currentUser}`, JSON.stringify(entries));
     }
     
     // Load data from localStorage
     function loadFromLocalStorage() {
-      const savedEntries = localStorage.getItem('budgetEntries');
+      const currentUser = localStorage.getItem('currentUser');
+      const savedEntries = localStorage.getItem(`budgetEntries_${currentUser}`);
       if (savedEntries) {
         entries = JSON.parse(savedEntries);
         renderTable(entries);
