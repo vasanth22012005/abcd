@@ -12,5 +12,12 @@
     "subject": "1212",
     "debit": 13213,
     "credit": 33131311111
+  },
+  {
+    "date": "2026-01-10",
+    "category": "SR",
+    "subject": "3",
+    "debit": 323232,
+    "credit": 0
   }
 ]
